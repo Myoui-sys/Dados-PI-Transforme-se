@@ -26,7 +26,13 @@ Then("devo ver a mensagem de cadastro {string}", async function(mensagemEsperada
 });
 
 Then("a API de cadastro deve rejeitar a solicitação", async function() {
-    assert.equal(this.apiBody.sucesso, false);
+    assert.equal(this.apiResponse.status(), 400);
+    assert.deepEqual(this.apiBody.errors.map(erro => erro.path).sort(), ["email", "senha", "sobrenome"]);
+});
+
+Then("devo ser redirecionado para a página de login", async function() {
+    await this.page.waitForURL("**/login", { timeout: 5000 });
+    assert.match(this.page.url(), /\/login$/);
 });
 
 async function assertMensagem(locator, mensagemEsperada) {

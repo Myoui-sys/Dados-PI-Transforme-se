@@ -1,4 +1,6 @@
-# Relatório de QA automatizado
+# Relatório de QA do ciclo de teste 1
+
+> Registro histórico da versão avaliada em 29/08/2026. As referências a funcionalidades ausentes e falhas descrevem aquele momento. Consulte [a visão dos dois ciclos](../README.md) para a evolução.
 
 Projeto: Transforme-se  
 Branch: `feature-testes_automatizados`  
@@ -138,3 +140,8 @@ Recomendação: corrigir para `imagem.width = 200` ou controlar dimensão via CS
 
 Os testes BDD executam uma cópia temporária da aplicação em `tests/tmp/app-under-test`.
 O arquivo `db.json` real do projeto não é alterado durante a execução dos cenários.
+
+
+## Documento detalhado
+
+[Relatório Word do ciclo 1](relatorio-detalhado.docx). As listas de aprovados, reprovados e ignorados estão reunidas neste Markdown.

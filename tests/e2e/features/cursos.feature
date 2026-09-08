@@ -4,6 +4,7 @@ Funcionalidade: Listagem de cursos
   Quero ver os cursos disponíveis
   Para escolher conteúdos do Transforme-se
 
+  @aprovado
   Cenário: Exibir cursos cadastrados no banco
     Dado que estou na página de cursos
     Então devo visualizar 2 cursos listados
