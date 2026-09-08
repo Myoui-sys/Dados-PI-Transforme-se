@@ -17,7 +17,7 @@ document.querySelector("form").addEventListener("submit", async (event) => {
         body: JSON.stringify(dados)
     });
 
-    // Converte a resposta do servidor para JSON
+    // Converte a resposta dgit diff feature-testes_automatizadosclico2..origin/maino servidor para JSON
     const resultado = await response.json();
 
     // Seleciona o elemento que exibirá mensagens de feedback para o usuário
