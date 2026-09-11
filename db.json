@@ -7,7 +7,8 @@
             "cnpj": "",
             "numero": "",
             "pronome": "",
-            "sobre": ""
+            "sobre": "",
+            "id_plano": 1
         },
         "carlos@gmail.com": {
             "id_usuario": 2,
@@ -16,7 +17,8 @@
             "cnpj": "",
             "numero": "",
             "pronome": "",
-            "sobre": ""
+            "sobre": "",
+            "id_plano": 1
         },
         "marcio@gmail.com": {
             "id_usuario": 3,
@@ -25,7 +27,8 @@
             "cnpj": "",
             "numero": "",
             "pronome": "",
-            "sobre": ""
+            "sobre": "",
+            "id_plano": 1
         },
         "ewerton@gmail.com": {
             "id_usuario": 4,
@@ -34,7 +37,8 @@
             "cnpj": "",
             "numero": "",
             "pronome": "",
-            "sobre": ""
+            "sobre": "",
+            "id_plano": 1
         },
         "matheus@gmail.com": {
             "id_usuario": 5,
@@ -42,7 +46,8 @@
             "senha": "123456",
             "numero": "",
             "pronome": "",
-            "sobre": ""
+            "sobre": "",
+            "id_plano": 1
         }
     },
     "saldos": {
@@ -112,30 +117,80 @@
             "imagem": "curso-2.jpeg"
         }
     },
+    "mentorias": {
+        "1": {
+            "id_mentoria": 1,
+            "titulo": "Finanças para iniciantes",
+            "id_professor": 1,
+            "avaliacao": 4.8,
+            "modalidade": "Online",
+            "imagem": "mentoria1.jpg"
+            },
+        "2": {
+            "id_mentoria": 2,
+            "titulo": "Marketing que vende",
+            "id_professor": 2,
+            "avaliacao": 4.8,
+            "modalidade": "Online",
+            "imagem": "mentoria2.jpg"
+            },
+        "3": {
+            "id_mentoria": 3,
+            "titulo": "Organização e produtividade",
+            "id_professor": 3,
+            "avaliacao": 4.8,
+            "modalidade": "Online",
+            "imagem": "mentoria3.jpg"
+            },
+        "4": {
+            "id_mentoria": 4,
+            "titulo": "Venda em rede sociais",
+            "id_professor": 4,
+            "avaliacao": 4.8,
+            "modalidade": "Online",
+            "imagem": "mentoria4.jpg"
+            },
+        "5": {
+            "id_mentoria": 5,
+            "titulo": "Gerencie seu negócio",
+            "id_professor": 5,
+            "avaliacao": 4.8,
+            "modalidade": "Online",
+            "imagem": "mentoria5.jpg"
+            },
+        "6": {
+            "id_mentoria": 6,
+            "titulo": "Bolsa de valores",
+            "id_professor": 1,
+            "avaliacao": 4.8,
+            "modalidade": "Online",
+            "imagem": "mentoria1.jpg"
+            }
+  },   
     "professores": {
         "1": {
             "id_professor": 1,
-            "nome": "Ana Carolina",
+            "nome": "Fernanda Lima",
             "cpf": "123.456.789-00"
         },
         "2": {
             "id_professor": 2,
-            "nome": "Carlos Eduardo",
+            "nome": "Elena Gonçalves",
             "cpf": "987.654.321-00"
         },
         "3": {
             "id_professor": 3,
-            "nome": "Fernanda Souza",
+            "nome": "Robson Gomes",
             "cpf": "456.789.123-00"
         },
         "4": {
             "id_professor": 4,
-            "nome": "Marcos Oliveira",
+            "nome": "Elma Maria",
             "cpf": "321.654.987-00"
         },
         "5": {
             "id_professor": 5,
-            "nome": "Juliana Ferreira",
+            "nome": "Silvana andrade",
             "cpf": "741.852.963-00"
         }
     },
@@ -163,6 +218,87 @@
             "id_usuario": 4,
             "titulo": "Organizar espaço de trabalho",
             "descricao": "Limpar a mesa e organizar os materiais de estudo"
+        },
+        "11": {
+            "id": 11,
+            "id_usuario": 2,
+            "titulo": "asdasdasdas",
+            "descricao": "asdasdas"
+        },
+        "12": {
+            "id": 12,
+            "id_usuario": 5,
+            "titulo": "asdasdasdas",
+            "descricao": "sfasfasf",
+            "status": "concluida"
+        },
+        "13": {
+            "id": 13,
+            "id_usuario": 5,
+            "titulo": "aaaa",
+            "descricao": "bbbbbbbbbbbbbb",
+            "status": "concluida"
+        }
+    },
+    "eventos": {
+        "1": {
+            "id": 1,
+            "id_usuario": 1,
+            "data": "2026-09-10",
+            "titulo": "Reunião com cliente",
+            "descricao": "Alinhar detalhes do contrato"
+        },
+        "2": {
+            "id": 2,
+            "id_usuario": 1,
+            "data": "2026-09-15",
+            "titulo": "Pagar boleto",
+            "descricao": ""
+        }
+    },
+    "planos": {
+    "1": {
+        "id_plano": 1,
+        "nome": "Gratuito",
+        "preco": 0,
+        "features": {
+            "dashboard_completo": true,
+            "controle_financeiro": true,
+            "biblioteca_basica": true,
+            "conteudos_exclusivos": false,
+            "templates_avancados": false,
+            "lista_especialistas": false,
+            "suporte_prioritario": false
+        }
+    },
+    "2": {
+        "id_plano": 2,
+        "nome": "Premium",
+        "preco": 29.90,
+        "features": {
+            "dashboard_completo": true,
+            "controle_financeiro": true,
+            "biblioteca_basica": true,
+            "conteudos_exclusivos": true,
+            "templates_avancados": true,
+            "lista_especialistas": true,
+            "suporte_prioritario": false
+        }
+    },
+    "3": {
+        "id_plano": 3,
+        "nome": "Premium Deluxe",
+        "preco": 59.90,
+        "features": {
+            "dashboard_completo": true,
+            "controle_financeiro": true,
+            "biblioteca_basica": true,
+            "conteudos_exclusivos": true,
+            "templates_avancados": true,
+            "lista_especialistas": true,
+            "suporte_prioritario": true
+            }
         }
     }
+
 }
