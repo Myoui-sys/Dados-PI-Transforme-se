@@ -1,0 +1,2350 @@
+[
+  {
+    "description": "  Como QA do sistema Transforme-se\n  Quero validar o cadastro pela interface e pela API\n  Para reduzir falhas antes da integração completa",
+    "elements": [
+      {
+        "description": "",
+        "id": "cadastro-de-usuário;cadastrar-um-novo-usuário-pela-interface",
+        "keyword": "Cenário",
+        "line": 8,
+        "name": "Cadastrar um novo usuário pela interface",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 217990399
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 53006599
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que estou na página de cadastro",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 70909199
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 10,
+            "name": "preencho o cadastro com nome \"QA\", sobrenome \"Automatizado\", email \"qa.automatizado@teste.com\" e senha \"123456\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\cadastro.steps.cjs:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 101241999
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 11,
+            "name": "envio o formulário de cadastro",
+            "match": {
+              "location": "tests\\e2e\\steps\\cadastro.steps.cjs:11"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 36509700
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 12,
+            "name": "devo ser redirecionado para a página de login",
+            "match": {
+              "location": "tests\\e2e\\steps\\cadastro.steps.cjs:33"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13280399
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aprovado",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "cadastro-de-usuário;impedir-cadastro-com-e-mail-já-cadastrado",
+        "keyword": "Cenário",
+        "line": 15,
+        "name": "Impedir cadastro com e-mail já cadastrado",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 110213500
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 29503899
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 16,
+            "name": "que estou na página de cadastro",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 38704600
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 17,
+            "name": "preencho o cadastro com nome \"Sabrina\", sobrenome \"Barros\", email \"sabrina@gmail.com\" e senha \"123456\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\cadastro.steps.cjs:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 26410699
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 18,
+            "name": "envio o formulário de cadastro",
+            "match": {
+              "location": "tests\\e2e\\steps\\cadastro.steps.cjs:11"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 33508400
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 19,
+            "name": "devo ver a mensagem de cadastro \"E-mail já cadastrado!\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\cadastro.steps.cjs:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 8492799
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aprovado",
+            "line": 14
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "cadastro-de-usuário;rejeitar-cadastro-incompleto-enviado-diretamente-para-a-api",
+        "keyword": "Cenário",
+        "line": 22,
+        "name": "Rejeitar cadastro incompleto enviado diretamente para a API",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 102377600
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 8439800
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 23,
+            "name": "envio um cadastro incompleto diretamente para a API",
+            "match": {
+              "location": "tests\\e2e\\steps\\cadastro.steps.cjs:15"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 744100
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 24,
+            "name": "a API de cadastro deve rejeitar a solicitação",
+            "match": {
+              "location": "tests\\e2e\\steps\\cadastro.steps.cjs:28"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 9202999
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aprovado",
+            "line": 21
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "cadastro-de-usuário",
+    "line": 2,
+    "keyword": "Funcionalidade",
+    "name": "Cadastro de usuário",
+    "tags": [],
+    "uri": "tests\\e2e\\features\\cadastro.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "novidades-e-regressões-do-ciclo-3;visitante-visualiza-catálogo-de-assinaturas",
+        "keyword": "Cenário",
+        "line": 4,
+        "name": "Visitante visualiza catálogo de assinaturas",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 125448199
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 21501199
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 5,
+            "name": "abro a tela de assinaturas sem entrar",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo3.steps.cjs:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 38032200
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 6,
+            "name": "vejo os planos em ordem de preço e o aviso de login",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo3.steps.cjs:10"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 8602399
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo3",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "novidades-e-regressões-do-ciclo-3;usuário-autenticado-visualiza-seu-plano-e-pode-trocar-assinatura",
+        "keyword": "Cenário",
+        "line": 8,
+        "name": "Usuário autenticado visualiza seu plano e pode trocar assinatura",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 112722600
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 6101400
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que estou autenticado na API de cursos",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:30"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 21120199
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 10,
+            "name": "abro a tela de assinaturas",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo3.steps.cjs:7"
+            }
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 5009823000,
+              "error_message": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.badge.atual') to be visible\u001b[22m\n\n    at World.<anonymous> (C:\\Users\\DACYRROSEPESSOASALVA\\Documents\\Dados-PI-Transforme-se\\tests\\e2e\\steps\\ciclo3.steps.cjs:18:45)"
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 11,
+            "name": "vejo meu plano atual e posso assinar o Premium",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo3.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 22732700
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo3",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "novidades-e-regressões-do-ciclo-3;imagens-dos-cursos-usam-largura-corrigida",
+        "keyword": "Cenário",
+        "line": 13,
+        "name": "Imagens dos cursos usam largura corrigida",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 134045499
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 27419999
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 14,
+            "name": "abro o catálogo de cursos do ciclo três",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo3.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 85382800
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 15,
+            "name": "todas as imagens dos cursos têm largura de 200 pixels",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo3.steps.cjs:28"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13850900
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo3",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "novidades-e-regressões-do-ciclo-3",
+    "line": 3,
+    "keyword": "Funcionalidade",
+    "name": "Novidades e regressões do ciclo 3",
+    "tags": [
+      {
+        "name": "@ciclo3",
+        "line": 2
+      }
+    ],
+    "uri": "tests\\e2e\\features\\ciclo3.feature"
+  },
+  {
+    "description": "  Como consumidor da API\n  Quero consultar os cursos disponíveis\n  Para receber o catálogo sem alterar os dados",
+    "elements": [
+      {
+        "description": "",
+        "id": "consulta-do-catálogo-no-backend-de-cursos;consultar-o-catálogo-sem-autenticação",
+        "keyword": "Cenário",
+        "line": 9,
+        "name": "Consultar o catálogo sem autenticação",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 127088700
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 6007800
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 10,
+            "name": "consulto o catálogo pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:38"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 253999
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 11,
+            "name": "a API deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 805299
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 12,
+            "name": "devo receber o catálogo completo em JSON",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11228900
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@cursos_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 8
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "consulta-do-catálogo-no-backend-de-cursos;consultar-o-catálogo-com-autenticação",
+        "keyword": "Cenário",
+        "line": 15,
+        "name": "Consultar o catálogo com autenticação",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 116867900
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 7708200
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 16,
+            "name": "que estou autenticado na API de cursos",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:30"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4486600
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 17,
+            "name": "consulto o catálogo pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:38"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 148199
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 18,
+            "name": "a API deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1047000
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 19,
+            "name": "devo receber o catálogo completo em JSON",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13467500
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@cursos_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 14
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "consulta-do-catálogo-no-backend-de-cursos;preservar-os-dados-ao-consultar-cursos",
+        "keyword": "Cenário",
+        "line": 22,
+        "name": "Preservar os dados ao consultar cursos",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 123147600
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1165500
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 23,
+            "name": "que registrei o estado atual do banco de teste",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:34"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4951799
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 24,
+            "name": "consulto o catálogo pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:38"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 65499
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 25,
+            "name": "a API deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 929600
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 26,
+            "name": "o banco de teste deve permanecer inalterado",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:51"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11676900
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@cursos_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 21
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "consulta-do-catálogo-no-backend-de-cursos",
+    "line": 3,
+    "keyword": "Funcionalidade",
+    "name": "Consulta do catálogo no backend de cursos",
+    "tags": [
+      {
+        "name": "@backend",
+        "line": 2
+      },
+      {
+        "name": "@cursos_api",
+        "line": 2
+      }
+    ],
+    "uri": "tests\\e2e\\features\\cursos-api.feature"
+  },
+  {
+    "description": "  Como visitante ou usuário autenticado\n  Quero ver os cursos disponíveis\n  Para escolher conteúdos do Transforme-se",
+    "elements": [
+      {
+        "description": "",
+        "id": "listagem-de-cursos;exibir-cursos-cadastrados-no-banco",
+        "keyword": "Cenário",
+        "line": 8,
+        "name": "Exibir cursos cadastrados no banco",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 123175699
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 27244399
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que estou na página de cursos",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:12"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 23568900
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 10,
+            "name": "devo visualizar 2 cursos listados",
+            "match": {
+              "location": "tests\\e2e\\steps\\cursos.steps.cjs:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 10551599
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 11,
+            "name": "devo visualizar o curso \"Como controlar suas finanças\" com descrição \"Aprenda a ter controle total do seu dinheiro.\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\cursos.steps.cjs:10"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 32386499
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 12,
+            "name": "devo visualizar o curso \"Montando a sua estratégia\" com descrição \"Aprenda a montar sua estratégia de marketing.\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\cursos.steps.cjs:10"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13373199
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aprovado",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "listagem-de-cursos",
+    "line": 2,
+    "keyword": "Funcionalidade",
+    "name": "Listagem de cursos",
+    "tags": [],
+    "uri": "tests\\e2e\\features\\cursos.feature"
+  },
+  {
+    "description": "  Como QA do sistema Transforme-se\n  Quero validar autenticação e sessão\n  Para garantir acesso correto aos cursos",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-de-usuário;login-com-credenciais-válidas",
+        "keyword": "Cenário",
+        "line": 8,
+        "name": "Login com credenciais válidas",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 119709300
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 28871699
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que estou na página de login",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 59209699
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 10,
+            "name": "faço login com email \"sabrina@gmail.com\" e senha \"123456\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\login.steps.cjs:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 30291499
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 11,
+            "name": "devo ser redirecionado para a página de cursos",
+            "match": {
+              "location": "tests\\e2e\\steps\\login.steps.cjs:10"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 27718700
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 12,
+            "name": "a sessão deve identificar o usuário \"Sabrina Barros\" com email \"sabrina@gmail.com\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\login.steps.cjs:21"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 40411299
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 13,
+            "name": "devo visualizar 2 cursos listados",
+            "match": {
+              "location": "tests\\e2e\\steps\\cursos.steps.cjs:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 15742200
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aprovado",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-de-usuário;login-com-e-mail-inexistente",
+        "keyword": "Cenário",
+        "line": 16,
+        "name": "Login com e-mail inexistente",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 143882900
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 29229900
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 17,
+            "name": "que estou na página de login",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 60914999
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 18,
+            "name": "faço login com email \"nao.existe@teste.com\" e senha \"123456\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\login.steps.cjs:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 39286100
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 19,
+            "name": "devo ver a mensagem de login \"Email inválido\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\login.steps.cjs:15"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 28274400
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aprovado",
+            "line": 15
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-de-usuário;login-com-senha-incorreta",
+        "keyword": "Cenário",
+        "line": 22,
+        "name": "Login com senha incorreta",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 124631799
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 29216099
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 23,
+            "name": "que estou na página de login",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 58992799
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 24,
+            "name": "faço login com email \"sabrina@gmail.com\" e senha \"senha-errada\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\login.steps.cjs:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 36387200
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 25,
+            "name": "devo ver a mensagem de login \"Senha incorreta\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\login.steps.cjs:15"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 17765499
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aprovado",
+            "line": 21
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-de-usuário",
+    "line": 2,
+    "keyword": "Funcionalidade",
+    "name": "Login de usuário",
+    "tags": [],
+    "uri": "tests\\e2e\\features\\login.feature"
+  },
+  {
+    "description": "  Como pessoa cadastrada\n  Quero consultar e editar meu próprio perfil\n  Para manter meus dados consistentes",
+    "elements": [
+      {
+        "description": "",
+        "id": "consulta-e-edição-do-perfil-no-backend;bloquear-consulta-de-perfil-sem-autenticação",
+        "keyword": "Cenário",
+        "line": 12,
+        "name": "Bloquear consulta de perfil sem autenticação",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 136226300
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 20014199
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que existe um usuário exclusivo para este cenário de perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:56"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3166999
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 13,
+            "name": "consulto meu perfil pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:85"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 56899
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 14,
+            "name": "a API deve responder com status 401",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 406699
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 15,
+            "name": "a API deve informar o erro \"Não autenticado\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:107"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11659299
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@perfil_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 11
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "consulta-e-edição-do-perfil-no-backend;consultar-os-campos-do-próprio-perfil-sem-expor-senha",
+        "keyword": "Cenário",
+        "line": 18,
+        "name": "Consultar os campos do próprio perfil sem expor senha",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 129400700
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 16433000
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que existe um usuário exclusivo para este cenário de perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:56"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3236399
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 19,
+            "name": "que estou autenticado com o usuário do cenário",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:77"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2048700
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 20,
+            "name": "consulto meu perfil pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:85"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 50600
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 21,
+            "name": "a API deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 387999
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 22,
+            "name": "devo receber somente os campos públicos do meu perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:111"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11155000
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@perfil_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 17
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "consulta-e-edição-do-perfil-no-backend;bloquear-edição-de-perfil-sem-autenticação",
+        "keyword": "Cenário",
+        "line": 25,
+        "name": "Bloquear edição de perfil sem autenticação",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 121777799
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 15326399
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que existe um usuário exclusivo para este cenário de perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:56"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 608700
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 26,
+            "name": "que registrei o estado atual do banco de teste",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:34"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2590299
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 27,
+            "name": "envio uma edição válida de perfil pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:89"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 98600
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 28,
+            "name": "a API deve bloquear a edição não autenticada",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:115"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 379000
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 29,
+            "name": "a API deve informar o erro \"Não autenticado\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:107"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 814500
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 30,
+            "name": "o banco de teste deve permanecer inalterado",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:51"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 10715200
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@perfil_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 24
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "consulta-e-edição-do-perfil-no-backend;atualizar-campos,-sessão-e-persistência-do-próprio-perfil",
+        "keyword": "Cenário",
+        "line": 33,
+        "name": "Atualizar campos, sessão e persistência do próprio perfil",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 117911799
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 33222999
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que existe um usuário exclusivo para este cenário de perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:56"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3106600
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 34,
+            "name": "que estou autenticado com o usuário do cenário",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:77"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4266400
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 35,
+            "name": "envio uma edição válida de perfil pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:89"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 76099
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 36,
+            "name": "a API deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 414899
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 37,
+            "name": "a edição do perfil deve ser confirmada",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:123"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5989300
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 38,
+            "name": "os novos campos devem aparecer na consulta, na sessão e no banco",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:127"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 851199
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 39,
+            "name": "o identificador, a senha e os outros usuários devem ser preservados",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:137"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13191899
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@perfil_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 32
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "consulta-e-edição-do-perfil-no-backend;impedir-troca-para-e-mail-de-outro-usuário",
+        "keyword": "Cenário",
+        "line": 42,
+        "name": "Impedir troca para e-mail de outro usuário",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 126290000
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 16512200
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que existe um usuário exclusivo para este cenário de perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:56"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3709500
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 43,
+            "name": "que estou autenticado com o usuário do cenário",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:77"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 819900
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 44,
+            "name": "que registrei o estado atual do banco de teste",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:34"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2844300
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 45,
+            "name": "tento alterar meu e-mail para \" CARLOS@GMAIL.COM \"",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:93"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 114199
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 46,
+            "name": "a API deve bloquear o e-mail duplicado",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:119"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 431200
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 47,
+            "name": "a API deve informar o erro \"Email já está sendo utilizado.\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:107"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 843800
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 48,
+            "name": "o banco de teste deve permanecer inalterado",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:51"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2608499
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 49,
+            "name": "a sessão deve manter meu e-mail original",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:147"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11671599
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@perfil_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 41
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "consulta-e-edição-do-perfil-no-backend;trocar-e-mail-com-normalização-e-atualizar-a-identidade-de-login",
+        "keyword": "Cenário",
+        "line": 52,
+        "name": "Trocar e-mail com normalização e atualizar a identidade de login",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 135859300
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 16789499
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que existe um usuário exclusivo para este cenário de perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:56"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3334699
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 53,
+            "name": "que estou autenticado com o usuário do cenário",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:77"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4002999
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 54,
+            "name": "altero meu e-mail para um novo endereço com maiúsculas e espaços",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:97"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 61299
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 55,
+            "name": "a API deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 335699
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 56,
+            "name": "a edição do perfil deve ser confirmada",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:123"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 6875599
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 57,
+            "name": "o e-mail normalizado deve substituir a chave antiga no banco e na sessão",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:151"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 10689700
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 58,
+            "name": "devo conseguir entrar com o novo e-mail e não com o antigo",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:159"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 12648099
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@perfil_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 51
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "consulta-e-edição-do-perfil-no-backend;consultar-perfil-após-login-com-maiúsculas-e-espaços",
+        "keyword": "Cenário",
+        "line": 61,
+        "name": "Consultar perfil após login com maiúsculas e espaços",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 125725300
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 16802200
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que existe um usuário exclusivo para este cenário de perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:56"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4084500
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 62,
+            "name": "que entrei na API com meu e-mail em maiúsculas e espaços",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:81"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2793500
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 63,
+            "name": "consulto meu perfil pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:85"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 167199
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 64,
+            "name": "a API deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 487399
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 65,
+            "name": "devo receber somente os campos públicos do meu perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:111"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11612199
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@perfil_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 60
+          },
+          {
+            "name": "@regressao_ciclo3",
+            "line": 60
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "consulta-e-edição-do-perfil-no-backend;rejeitar-edição-sem-e-mail",
+        "keyword": "Cenário",
+        "line": 68,
+        "name": "Rejeitar edição sem e-mail",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 128447199
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 19537200
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que existe um usuário exclusivo para este cenário de perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:56"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3765999
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 69,
+            "name": "que estou autenticado com o usuário do cenário",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:77"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 830500
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 70,
+            "name": "que registrei o estado atual do banco de teste",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:34"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2605299
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 71,
+            "name": "envio uma edição de perfil sem e-mail",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:102"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 58999
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 72,
+            "name": "a API deve responder com status 400",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2390500
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 73,
+            "name": "o banco de teste deve permanecer inalterado",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:51"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11849500
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@perfil_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 67
+          },
+          {
+            "name": "@regressao_ciclo3",
+            "line": 67
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "consulta-e-edição-do-perfil-no-backend;rejeitar-edição-com-e-mail-inválido",
+        "keyword": "Cenário",
+        "line": 76,
+        "name": "Rejeitar edição com e-mail inválido",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 136271999
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 15741900
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que existe um usuário exclusivo para este cenário de perfil",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:56"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3275600
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 77,
+            "name": "que estou autenticado com o usuário do cenário",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:77"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1077499
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 78,
+            "name": "que registrei o estado atual do banco de teste",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:34"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3743500
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 79,
+            "name": "tento alterar meu e-mail para \"email-invalido\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:93"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 77799
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 80,
+            "name": "a API deve responder com status 400",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1021199
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 81,
+            "name": "o banco de teste deve permanecer inalterado",
+            "match": {
+              "location": "tests\\e2e\\steps\\backend-api.steps.cjs:51"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 12406299
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@backend",
+            "line": 2
+          },
+          {
+            "name": "@perfil_api",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 75
+          },
+          {
+            "name": "@regressao_ciclo3",
+            "line": 75
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "consulta-e-edição-do-perfil-no-backend",
+    "line": 3,
+    "keyword": "Funcionalidade",
+    "name": "Consulta e edição do perfil no backend",
+    "tags": [
+      {
+        "name": "@backend",
+        "line": 2
+      },
+      {
+        "name": "@perfil_api",
+        "line": 2
+      }
+    ],
+    "uri": "tests\\e2e\\features\\perfil-api.feature"
+  },
+  {
+    "description": "  Como pessoa usuária do sistema\n  Quero acessar as páginas por rotas simples\n  Para navegar sem conhecer a estrutura interna de arquivos",
+    "elements": [
+      {
+        "description": "",
+        "id": "rotas-públicas-amigáveis;acessar-rota-amigável-de-cadastro",
+        "keyword": "Cenário",
+        "line": 8,
+        "name": "Acessar rota amigável de cadastro",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 129292799
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 34437299
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 9,
+            "name": "acesso a rota pública \"/cadastro\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 144800
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 10,
+            "name": "a resposta HTTP deve ser 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:28"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 14230199
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aprovado",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "rotas-públicas-amigáveis;acessar-rota-amigável-de-login",
+        "keyword": "Cenário",
+        "line": 13,
+        "name": "Acessar rota amigável de login",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 126994500
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 30795000
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 14,
+            "name": "acesso a rota pública \"/login\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 75799
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 15,
+            "name": "a resposta HTTP deve ser 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:28"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 12751700
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aprovado",
+            "line": 12
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "rotas-públicas-amigáveis;acessar-rota-amigável-de-cursos",
+        "keyword": "Cenário",
+        "line": 18,
+        "name": "Acessar rota amigável de cursos",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 128664200
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 27104799
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 19,
+            "name": "acesso a rota pública \"/cursos\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 62599
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 20,
+            "name": "a resposta HTTP deve ser 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\common.steps.cjs:28"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 17986600
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aprovado",
+            "line": 17
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "rotas-públicas-amigáveis",
+    "line": 2,
+    "keyword": "Funcionalidade",
+    "name": "Rotas públicas amigáveis",
+    "tags": [],
+    "uri": "tests\\e2e\\features\\rotas.feature"
+  }
+]

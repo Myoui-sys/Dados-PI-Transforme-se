@@ -22,7 +22,7 @@ test("unitário - login.js envia credenciais para POST /login em JSON", () => {
     assert.match(script, /senhaDigitada/);
 });
 
-test("rejeitado - cursos.js deve configurar a largura da imagem com a propriedade correta", () => {
+test("regressão - cursos.js deve configurar a largura da imagem com a propriedade correta", () => {
     const script = fs.readFileSync(path.join(projectRoot, "public", "scripts", "cursos.js"), "utf8");
 
     assert.match(script, /imagem\.width\s*=\s*200/);

@@ -1,0 +1,14 @@
+
+Failed scenarios:
+  1) Usuário autenticado visualiza seu plano e pode trocar assinatura # tests\e2e\features\ciclo3.feature:8
+       Então vejo meu plano atual e posso assinar o Premium # tests\e2e\steps\ciclo3.steps.cjs:17
+           locator.waitFor: Timeout 5000ms exceeded.
+           Call log:
+           [2m  - waiting for locator('.badge.atual') to be visible[22m
+           
+               at World.<anonymous> (C:\Users\DACYRROSEPESSOASALVA\Documents\Dados-PI-Transforme-se\tests\e2e\steps\ciclo3.steps.cjs:18:45)
+
+2 hooks (2 passed)
+25 scenarios (24 passed, 1 failed)
+153 steps (152 passed, 1 failed)
+0m 11.144s (0m 11.89s executing your code)

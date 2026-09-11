@@ -1,6 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const evidencias = path.join(__dirname, "tests", "reports", "ciclo-2", "evidencias");
+const evidencias = path.join(__dirname, "tests", "reports", "ciclo-3", "evidencias");
 fs.mkdirSync(evidencias, { recursive: true });
 
 function perfil(tags, relatorio) {
@@ -11,13 +11,14 @@ function perfil(tags, relatorio) {
         format: [
             "progress",
             "summary",
-            `json:${path.join(evidencias, relatorio)}`
+            `json:${path.relative(__dirname, path.join(evidencias, relatorio)).replaceAll("\\", "/")}`
         ],
         publishQuiet: true
     };
 }
 
 module.exports = {
+    ciclo3: perfil("(@ciclo3 or @perfil_api) and not @pendente", "cucumber-ciclo3.json"),
     default: perfil("not @pendente", "cucumber-report.json"),
     aprovados: perfil("@aprovado and not @pendente", "cucumber-aprovados.json"),
     reprovados: perfil("@reprovado and not @pendente", "cucumber-reprovados.json"),

@@ -1,4 +1,10 @@
-# Relatório de QA dos dois ciclos de teste
+# Relatórios de QA
+
+## Ciclo atual — 3
+
+O [relatório do ciclo 3](ciclo-3/README.md) registra as novas funcionalidades e a confirmação das correções anteriores: **125 verificações, 112 aprovações, 6 falhas e 7 skips**. Inclui os comandos atuais e as evidências. Os dados abaixo descrevem o histórico dos ciclos 1 e 2; seus comandos e classificações refletem aquela época.
+
+## Histórico dos dois primeiros ciclos
 
 Foram realizados **dois ciclos de teste** no projeto Transforme-se. O primeiro identificou problemas no funcionamento inicial. O segundo verificou as correções recebidas e ampliou a avaliação do backend de cursos e perfil. As repetições e a separação em grupos fazem parte do ciclo 2; não são ciclos novos.
 

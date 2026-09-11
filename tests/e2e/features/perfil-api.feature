@@ -57,14 +57,14 @@ Funcionalidade: Consulta e edição do perfil no backend
     E o e-mail normalizado deve substituir a chave antiga no banco e na sessão
     E devo conseguir entrar com o novo e-mail e não com o antigo
 
-  @reprovado
+  @aprovado @regressao_ciclo3
   Cenário: Consultar perfil após login com maiúsculas e espaços
     Dado que entrei na API com meu e-mail em maiúsculas e espaços
     Quando consulto meu perfil pela API
     Então a API deve responder com status 200
     E devo receber somente os campos públicos do meu perfil
 
-  @reprovado
+  @aprovado @regressao_ciclo3
   Cenário: Rejeitar edição sem e-mail
     Dado que estou autenticado com o usuário do cenário
     E que registrei o estado atual do banco de teste
@@ -72,7 +72,7 @@ Funcionalidade: Consulta e edição do perfil no backend
     Então a API deve responder com status 400
     E o banco de teste deve permanecer inalterado
 
-  @reprovado
+  @aprovado @regressao_ciclo3
   Cenário: Rejeitar edição com e-mail inválido
     Dado que estou autenticado com o usuário do cenário
     E que registrei o estado atual do banco de teste

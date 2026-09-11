@@ -1,7 +1,17 @@
 {
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/unit/*.test.cjs tests/backend/*.test.cjs",
+    "test:ciclo3": "node --test --test-concurrency=1 tests/unit/*.test.cjs tests/backend/*.test.cjs",
+    "test:bdd": "cucumber-js",
+    "test:bdd:ciclo3": "cucumber-js --profile ciclo3"
+  },
   "dependencies": {
     "express": "^5.2.1",
     "express-session": "^1.19.0",
     "express-validator": "^7.3.2"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.2.1",
+    "playwright": "^1.63.0"
   }
 }

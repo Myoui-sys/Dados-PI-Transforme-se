@@ -1,0 +1,731 @@
+TAP version 13
+# Subtest: C3 rotas - /assinaturas entrega HTML
+ok 1 - C3 rotas - /assinaturas entrega HTML
+  ---
+  duration_ms: 255.8729
+  type: 'test'
+  ...
+# Subtest: C3 rotas - /mentorias entrega HTML
+ok 2 - C3 rotas - /mentorias entrega HTML
+  ---
+  duration_ms: 3.9529
+  type: 'test'
+  ...
+# Subtest: C3 rotas - /configuracoes entrega HTML
+ok 3 - C3 rotas - /configuracoes entrega HTML
+  ---
+  duration_ms: 3.7694
+  type: 'test'
+  ...
+# Subtest: C3 rotas - /obrigacoes entrega HTML
+ok 4 - C3 rotas - /obrigacoes entrega HTML # SKIP Frontend do MeuMEI ainda não implementado; reativar quando a página estiver pronta para integração
+  ---
+  duration_ms: 0.1182
+  type: 'test'
+  ...
+# Subtest: C3 rotas - /guias entrega HTML
+ok 5 - C3 rotas - /guias entrega HTML
+  ---
+  duration_ms: 2.4929
+  type: 'test'
+  ...
+# Subtest: C3 rotas - /visaoGeral entrega HTML
+ok 6 - C3 rotas - /visaoGeral entrega HTML # SKIP Frontend do MeuMEI ainda não implementado; reativar quando a página estiver pronta para integração
+  ---
+  duration_ms: 0.0849
+  type: 'test'
+  ...
+# Subtest: C3 mentorias - catálogo associa cada mentoria ao professor
+ok 7 - C3 mentorias - catálogo associa cada mentoria ao professor
+  ---
+  duration_ms: 2.8655
+  type: 'test'
+  ...
+# Subtest: C3 planos - catálogo público completo sem escrita
+ok 8 - C3 planos - catálogo público completo sem escrita
+  ---
+  duration_ms: 3.1719
+  type: 'test'
+  ...
+# Subtest: C3 autenticação - GET /api/planos/atual bloqueia visitante
+ok 9 - C3 autenticação - GET /api/planos/atual bloqueia visitante
+  ---
+  duration_ms: 2.6358
+  type: 'test'
+  ...
+# Subtest: C3 autenticação - POST /api/planos/assinar bloqueia visitante
+ok 10 - C3 autenticação - POST /api/planos/assinar bloqueia visitante
+  ---
+  duration_ms: 2.6272
+  type: 'test'
+  ...
+# Subtest: C3 autenticação - GET /api/eventos bloqueia visitante
+ok 11 - C3 autenticação - GET /api/eventos bloqueia visitante
+  ---
+  duration_ms: 2.6378
+  type: 'test'
+  ...
+# Subtest: C3 autenticação - POST /eventos bloqueia visitante
+ok 12 - C3 autenticação - POST /eventos bloqueia visitante
+  ---
+  duration_ms: 2.7146
+  type: 'test'
+  ...
+# Subtest: C3 autenticação - PUT /eventos/1 bloqueia visitante
+ok 13 - C3 autenticação - PUT /eventos/1 bloqueia visitante
+  ---
+  duration_ms: 2.2694
+  type: 'test'
+  ...
+# Subtest: C3 autenticação - DELETE /eventos/1 bloqueia visitante
+ok 14 - C3 autenticação - DELETE /eventos/1 bloqueia visitante
+  ---
+  duration_ms: 1.9114
+  type: 'test'
+  ...
+# Subtest: C3 autenticação - GET /api/tarefas bloqueia visitante
+ok 15 - C3 autenticação - GET /api/tarefas bloqueia visitante
+  ---
+  duration_ms: 3.3304
+  type: 'test'
+  ...
+# Subtest: C3 autenticação - POST /tarefas bloqueia visitante
+ok 16 - C3 autenticação - POST /tarefas bloqueia visitante
+  ---
+  duration_ms: 2.3204
+  type: 'test'
+  ...
+# Subtest: C3 autenticação - PUT /tarefas/1 bloqueia visitante
+ok 17 - C3 autenticação - PUT /tarefas/1 bloqueia visitante
+  ---
+  duration_ms: 2.3036
+  type: 'test'
+  ...
+# Subtest: C3 autenticação - DELETE /tarefas/1 bloqueia visitante
+ok 18 - C3 autenticação - DELETE /tarefas/1 bloqueia visitante
+  ---
+  duration_ms: 3.9249
+  type: 'test'
+  ...
+# Subtest: C3 planos - assinar plano 1 persiste e preserva outros usuários
+ok 19 - C3 planos - assinar plano 1 persiste e preserva outros usuários
+  ---
+  duration_ms: 3.1396
+  type: 'test'
+  ...
+# Subtest: C3 planos - assinar plano 2 persiste e preserva outros usuários
+ok 20 - C3 planos - assinar plano 2 persiste e preserva outros usuários
+  ---
+  duration_ms: 2.8921
+  type: 'test'
+  ...
+# Subtest: C3 planos - assinar plano 3 persiste e preserva outros usuários
+ok 21 - C3 planos - assinar plano 3 persiste e preserva outros usuários
+  ---
+  duration_ms: 3.1003
+  type: 'test'
+  ...
+# Subtest: C3 planos - rejeita plano 999
+ok 22 - C3 planos - rejeita plano 999
+  ---
+  duration_ms: 2.7909
+  type: 'test'
+  ...
+# Subtest: C3 planos - rejeita plano null
+ok 23 - C3 planos - rejeita plano null
+  ---
+  duration_ms: 2.1814
+  type: 'test'
+  ...
+# Subtest: C3 planos - rejeita plano invalido
+ok 24 - C3 planos - rejeita plano invalido
+  ---
+  duration_ms: 1.9396
+  type: 'test'
+  ...
+# Subtest: C3 planos - consulta autenticada retorna plano assinado
+not ok 25 - C3 planos - consulta autenticada retorna plano assinado
+  ---
+  duration_ms: 4.3622
+  type: 'test'
+  location: 'C:\\Users\\DACYRROSEPESSOASALVA\\Documents\\Dados-PI-Transforme-se\\tests\\backend\\ciclo3.test.cjs:77:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    500 !== 200
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 200
+  actual: 500
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (C:\Users\DACYRROSEPESSOASALVA\Documents\Dados-PI-Transforme-se\tests\backend\ciclo3.test.cjs:78:54)
+    process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    async Test.run (node:internal/test_runner/test:1313:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+  ...
+# Subtest: C3 planos - novo usuário recebe plano gratuito
+not ok 26 - C3 planos - novo usuário recebe plano gratuito
+  ---
+  duration_ms: 6.5927
+  type: 'test'
+  location: 'C:\\Users\\DACYRROSEPESSOASALVA\\Documents\\Dados-PI-Transforme-se\\tests\\backend\\ciclo3.test.cjs:81:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    500 !== 200
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 200
+  actual: 500
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (C:\Users\DACYRROSEPESSOASALVA\Documents\Dados-PI-Transforme-se\tests\backend\ciclo3.test.cjs:87:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    async Test.run (node:internal/test_runner/test:1313:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+  ...
+# Subtest: C3 tarefas - criar, listar, editar e excluir com persistência
+ok 27 - C3 tarefas - criar, listar, editar e excluir com persistência
+  ---
+  duration_ms: 9.9173
+  type: 'test'
+  ...
+# Subtest: C3 tarefas - PUT bloqueia outro proprietário
+ok 28 - C3 tarefas - PUT bloqueia outro proprietário
+  ---
+  duration_ms: 3.1869
+  type: 'test'
+  ...
+# Subtest: C3 tarefas - DELETE bloqueia outro proprietário
+ok 29 - C3 tarefas - DELETE bloqueia outro proprietário
+  ---
+  duration_ms: 2.8148
+  type: 'test'
+  ...
+# Subtest: C3 tarefas - PUT inexistente retorna 404
+ok 30 - C3 tarefas - PUT inexistente retorna 404
+  ---
+  duration_ms: 1.9034
+  type: 'test'
+  ...
+# Subtest: C3 tarefas - DELETE inexistente retorna 404
+ok 31 - C3 tarefas - DELETE inexistente retorna 404
+  ---
+  duration_ms: 2.5238
+  type: 'test'
+  ...
+# Subtest: C3 tarefas - criação sem título não persiste
+ok 32 - C3 tarefas - criação sem título não persiste
+  ---
+  duration_ms: 1.9586
+  type: 'test'
+  ...
+# Subtest: C3 tarefas - edição inválida não altera memória nem disco
+not ok 33 - C3 tarefas - edição inválida não altera memória nem disco
+  ---
+  duration_ms: 5.5733
+  type: 'test'
+  location: 'C:\\Users\\DACYRROSEPESSOASALVA\\Documents\\Dados-PI-Transforme-se\\tests\\backend\\ciclo3.test.cjs:124:5'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      {
+        descricao: '',
+        id: 16,
+        id_usuario: 1,
+        status: 'pendente',
+    +   titulo: 'Não deve mudar'
+    -   titulo: 'QA ciclo 3'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    id: 16
+    id_usuario: 1
+    titulo: 'QA ciclo 3'
+    descricao: ''
+    status: 'pendente'
+  actual:
+    id: 16
+    id_usuario: 1
+    titulo: 'Não deve mudar'
+    descricao: ''
+    status: 'pendente'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (C:\Users\DACYRROSEPESSOASALVA\Documents\Dados-PI-Transforme-se\tests\backend\ciclo3.test.cjs:130:22)
+    process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    async Test.run (node:internal/test_runner/test:1313:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+  ...
+# Subtest: C3 eventos - criar, listar, editar e excluir com persistência
+ok 34 - C3 eventos - criar, listar, editar e excluir com persistência
+  ---
+  duration_ms: 10.0839
+  type: 'test'
+  ...
+# Subtest: C3 eventos - PUT bloqueia outro proprietário
+ok 35 - C3 eventos - PUT bloqueia outro proprietário
+  ---
+  duration_ms: 3.4365
+  type: 'test'
+  ...
+# Subtest: C3 eventos - DELETE bloqueia outro proprietário
+ok 36 - C3 eventos - DELETE bloqueia outro proprietário
+  ---
+  duration_ms: 3.9269
+  type: 'test'
+  ...
+# Subtest: C3 eventos - PUT inexistente retorna 404
+ok 37 - C3 eventos - PUT inexistente retorna 404
+  ---
+  duration_ms: 1.8336
+  type: 'test'
+  ...
+# Subtest: C3 eventos - DELETE inexistente retorna 404
+ok 38 - C3 eventos - DELETE inexistente retorna 404
+  ---
+  duration_ms: 1.5615
+  type: 'test'
+  ...
+# Subtest: C3 eventos - criação sem título não persiste
+ok 39 - C3 eventos - criação sem título não persiste
+  ---
+  duration_ms: 1.7004
+  type: 'test'
+  ...
+# Subtest: C3 eventos - edição inválida não altera memória nem disco
+not ok 40 - C3 eventos - edição inválida não altera memória nem disco
+  ---
+  duration_ms: 5.5896
+  type: 'test'
+  location: 'C:\\Users\\DACYRROSEPESSOASALVA\\Documents\\Dados-PI-Transforme-se\\tests\\backend\\ciclo3.test.cjs:124:5'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      {
+    +   data: '2026-12-01',
+    -   data: '2026-09-11',
+        descricao: '',
+        id: 5,
+        id_usuario: 1,
+        titulo: 'QA ciclo 3'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    id: 5
+    id_usuario: 1
+    data: '2026-09-11'
+    titulo: 'QA ciclo 3'
+    descricao: ''
+  actual:
+    id: 5
+    id_usuario: 1
+    data: '2026-12-01'
+    titulo: 'QA ciclo 3'
+    descricao: ''
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (C:\Users\DACYRROSEPESSOASALVA\Documents\Dados-PI-Transforme-se\tests\backend\ciclo3.test.cjs:130:22)
+    process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    async Test.run (node:internal/test_runner/test:1313:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+  ...
+# Subtest: C3 calendário - filtro por mês e ano e isolamento do usuário
+ok 41 - C3 calendário - filtro por mês e ano e isolamento do usuário
+  ---
+  duration_ms: 1.6907
+  type: 'test'
+  ...
+# Subtest: C3 calendário - rejeita data inválida "11/09/2026"
+ok 42 - C3 calendário - rejeita data inválida "11/09/2026"
+  ---
+  duration_ms: 1.8599
+  type: 'test'
+  ...
+# Subtest: C3 calendário - rejeita data inválida ""
+ok 43 - C3 calendário - rejeita data inválida ""
+  ---
+  duration_ms: 1.716
+  type: 'test'
+  ...
+# Subtest: C3 calendário - rejeita data inválida "2026-02-30"
+not ok 44 - C3 calendário - rejeita data inválida "2026-02-30"
+  ---
+  duration_ms: 1.9102
+  type: 'test'
+  location: 'C:\\Users\\DACYRROSEPESSOASALVA\\Documents\\Dados-PI-Transforme-se\\tests\\backend\\ciclo3.test.cjs:139:54'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    200 !== 400
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 400
+  actual: 200
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (C:\Users\DACYRROSEPESSOASALVA\Documents\Dados-PI-Transforme-se\tests\backend\ciclo3.test.cjs:142:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    async Test.run (node:internal/test_runner/test:1313:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+  ...
+# Subtest: C3 regressão perfil - rejeita e-mail null e mantém sessão
+ok 45 - C3 regressão perfil - rejeita e-mail null e mantém sessão
+  ---
+  duration_ms: 3.5623
+  type: 'test'
+  ...
+# Subtest: C3 regressão perfil - rejeita e-mail 123 e mantém sessão
+ok 46 - C3 regressão perfil - rejeita e-mail 123 e mantém sessão
+  ---
+  duration_ms: 2.6523
+  type: 'test'
+  ...
+# Subtest: C3 regressão perfil - rejeita e-mail {} e mantém sessão
+ok 47 - C3 regressão perfil - rejeita e-mail {} e mantém sessão
+  ---
+  duration_ms: 2.6744
+  type: 'test'
+  ...
+# Subtest: C3 regressão perfil - rejeita e-mail [] e mantém sessão
+ok 48 - C3 regressão perfil - rejeita e-mail [] e mantém sessão
+  ---
+  duration_ms: 2.5637
+  type: 'test'
+  ...
+# Subtest: C3 regressão perfil - rejeita e-mail "" e mantém sessão
+ok 49 - C3 regressão perfil - rejeita e-mail "" e mantém sessão
+  ---
+  duration_ms: 2.389
+  type: 'test'
+  ...
+# Subtest: C3 regressão perfil - rejeita e-mail " " e mantém sessão
+ok 50 - C3 regressão perfil - rejeita e-mail " " e mantém sessão
+  ---
+  duration_ms: 2.6055
+  type: 'test'
+  ...
+# Subtest: C3 regressão perfil - rejeita e-mail "sem-arroba" e mantém sessão
+ok 51 - C3 regressão perfil - rejeita e-mail "sem-arroba" e mantém sessão
+  ---
+  duration_ms: 2.5144
+  type: 'test'
+  ...
+# Subtest: C3 regressão perfil - rejeita e-mail "a@b" e mantém sessão
+ok 52 - C3 regressão perfil - rejeita e-mail "a@b" e mantém sessão
+  ---
+  duration_ms: 2.5983
+  type: 'test'
+  ...
+# Subtest: C3 regressão perfil - rejeita e-mail "a b@teste.com" e mantém sessão
+ok 53 - C3 regressão perfil - rejeita e-mail "a b@teste.com" e mantém sessão
+  ---
+  duration_ms: 2.5552
+  type: 'test'
+  ...
+# Subtest: API cursos - GET público retorna catálogo completo em JSON
+ok 54 - API cursos - GET público retorna catálogo completo em JSON
+  ---
+  duration_ms: 241.7879
+  type: 'test'
+  ...
+# Subtest: API cursos - sessão autenticada recebe o mesmo catálogo
+ok 55 - API cursos - sessão autenticada recebe o mesmo catálogo
+  ---
+  duration_ms: 13.0152
+  type: 'test'
+  ...
+# Subtest: API cursos - consulta não altera os dados persistidos
+ok 56 - API cursos - consulta não altera os dados persistidos
+  ---
+  duration_ms: 2.9349
+  type: 'test'
+  ...
+# Subtest: API perfil - GET sem sessão retorna 401
+ok 57 - API perfil - GET sem sessão retorna 401
+  ---
+  duration_ms: 1.7078
+  type: 'test'
+  ...
+# Subtest: API perfil - GET retorna campos do próprio usuário sem senha
+ok 58 - API perfil - GET retorna campos do próprio usuário sem senha
+  ---
+  duration_ms: 3.4633
+  type: 'test'
+  ...
+# Subtest: API perfil - PUT sem sessão bloqueia alteração
+ok 59 - API perfil - PUT sem sessão bloqueia alteração
+  ---
+  duration_ms: 3.2462
+  type: 'test'
+  ...
+# Subtest: API perfil - PUT atualiza campos, sessão e persistência
+ok 60 - API perfil - PUT atualiza campos, sessão e persistência
+  ---
+  duration_ms: 6.9142
+  type: 'test'
+  ...
+# Subtest: API perfil - PUT recusa e-mail de outro usuário sem persistir
+ok 61 - API perfil - PUT recusa e-mail de outro usuário sem persistir
+  ---
+  duration_ms: 4.7681
+  type: 'test'
+  ...
+# Subtest: API perfil - troca de e-mail normaliza chave, sessão e próximo login
+ok 62 - API perfil - troca de e-mail normaliza chave, sessão e próximo login
+  ---
+  duration_ms: 8.7781
+  type: 'test'
+  ...
+# Subtest: API perfil - login com maiúsculas e espaços deve permitir consultar perfil
+ok 63 - API perfil - login com maiúsculas e espaços deve permitir consultar perfil
+  ---
+  duration_ms: 2.3997
+  type: 'test'
+  ...
+# Subtest: API perfil - PUT sem e-mail deve retornar 400 sem alterar banco
+ok 64 - API perfil - PUT sem e-mail deve retornar 400 sem alterar banco
+  ---
+  duration_ms: 3.4019
+  type: 'test'
+  ...
+# Subtest: API perfil - PUT deve rejeitar e-mail inválido sem persistir
+ok 65 - API perfil - PUT deve rejeitar e-mail inválido sem persistir
+  ---
+  duration_ms: 4.2315
+  type: 'test'
+  ...
+# Subtest: unitário - db.json possui coleções principais
+ok 66 - unitário - db.json possui coleções principais
+  ---
+  duration_ms: 0.4995
+  type: 'test'
+  ...
+# Subtest: unitário - cursos possuem campos obrigatórios para renderização
+ok 67 - unitário - cursos possuem campos obrigatórios para renderização
+  ---
+  duration_ms: 0.13
+  type: 'test'
+  ...
+# Subtest: unitário - imagens dos cursos existem na pasta pública
+ok 68 - unitário - imagens dos cursos existem na pasta pública
+  ---
+  duration_ms: 0.2978
+  type: 'test'
+  ...
+# Subtest: unitário - cursos referenciam professores existentes
+ok 69 - unitário - cursos referenciam professores existentes
+  ---
+  duration_ms: 0.0916
+  type: 'test'
+  ...
+# Subtest: unitário - cadastro.js envia os dados para POST /cadastro em JSON
+ok 70 - unitário - cadastro.js envia os dados para POST /cadastro em JSON
+  ---
+  duration_ms: 0.8192
+  type: 'test'
+  ...
+# Subtest: unitário - login.js envia credenciais para POST /login em JSON
+ok 71 - unitário - login.js envia credenciais para POST /login em JSON
+  ---
+  duration_ms: 0.2552
+  type: 'test'
+  ...
+# Subtest: regressão - cursos.js deve configurar a largura da imagem com a propriedade correta
+ok 72 - regressão - cursos.js deve configurar a largura da imagem com a propriedade correta
+  ---
+  duration_ms: 1.0646
+  type: 'test'
+  ...
+# Subtest: C3 regras - plano 1 respeita todas as permissões
+ok 73 - C3 regras - plano 1 respeita todas as permissões
+  ---
+  duration_ms: 0.8767
+  type: 'test'
+  ...
+# Subtest: C3 regras - plano 2 respeita todas as permissões
+ok 74 - C3 regras - plano 2 respeita todas as permissões
+  ---
+  duration_ms: 0.157
+  type: 'test'
+  ...
+# Subtest: C3 regras - plano 3 respeita todas as permissões
+ok 75 - C3 regras - plano 3 respeita todas as permissões
+  ---
+  duration_ms: 0.6821
+  type: 'test'
+  ...
+# Subtest: C3 regras - plano ausente ou inválido undefined usa Gratuito
+ok 76 - C3 regras - plano ausente ou inválido undefined usa Gratuito
+  ---
+  duration_ms: 0.1628
+  type: 'test'
+  ...
+# Subtest: C3 regras - plano ausente ou inválido 999 usa Gratuito
+ok 77 - C3 regras - plano ausente ou inválido 999 usa Gratuito
+  ---
+  duration_ms: 0.1322
+  type: 'test'
+  ...
+# Subtest: C3 regras - middleware com plano null retorna 401
+ok 78 - C3 regras - middleware com plano null retorna 401
+  ---
+  duration_ms: 0.2274
+  type: 'test'
+  ...
+# Subtest: C3 regras - middleware com plano 1 retorna 403
+ok 79 - C3 regras - middleware com plano 1 retorna 403
+  ---
+  duration_ms: 0.1158
+  type: 'test'
+  ...
+# Subtest: C3 regras - middleware com plano 3 retorna 200
+ok 80 - C3 regras - middleware com plano 3 retorna 200
+  ---
+  duration_ms: 0.1048
+  type: 'test'
+  ...
+# Subtest: unitário - POST /login autentica credenciais válidas e cria sessão
+ok 81 - unitário - POST /login autentica credenciais válidas e cria sessão
+  ---
+  duration_ms: 60.0103
+  type: 'test'
+  ...
+# Subtest: unitário - POST /login rejeita e-mail inexistente
+ok 82 - unitário - POST /login rejeita e-mail inexistente
+  ---
+  duration_ms: 1.8083
+  type: 'test'
+  ...
+# Subtest: unitário - POST /login rejeita senha incorreta
+ok 83 - unitário - POST /login rejeita senha incorreta
+  ---
+  duration_ms: 2.0368
+  type: 'test'
+  ...
+# Subtest: unitário - POST /cadastro cria usuário novo com próximo id
+ok 84 - unitário - POST /cadastro cria usuário novo com próximo id
+  ---
+  duration_ms: 4.8723
+  type: 'test'
+  ...
+# Subtest: unitário - POST /cadastro rejeita e-mail duplicado sem gravar banco
+ok 85 - unitário - POST /cadastro rejeita e-mail duplicado sem gravar banco
+  ---
+  duration_ms: 1.8489
+  type: 'test'
+  ...
+# Subtest: regressão - POST /cadastro deve validar campos obrigatórios no back-end
+ok 86 - regressão - POST /cadastro deve validar campos obrigatórios no back-end
+  ---
+  duration_ms: 2.4038
+  type: 'test'
+  ...
+# Subtest: regressão - POST /cadastro deve tratar e-mail duplicado sem diferenciar maiúsculas
+ok 87 - regressão - POST /cadastro deve tratar e-mail duplicado sem diferenciar maiúsculas
+  ---
+  duration_ms: 1.7454
+  type: 'test'
+  ...
+# Subtest: rejeitado - POST /login não deve registrar dados sensíveis no console
+ok 88 - rejeitado - POST /login não deve registrar dados sensíveis no console # SKIP Fora do escopo do ciclo 2 por solicitação do usuário
+  ---
+  duration_ms: 0.0708
+  type: 'test'
+  ...
+# Subtest: regressão - cadastro rejeita nome inválido sem persistir
+ok 89 - regressão - cadastro rejeita nome inválido sem persistir
+  ---
+  duration_ms: 1.7283
+  type: 'test'
+  ...
+# Subtest: regressão - cadastro rejeita sobrenome inválido sem persistir
+ok 90 - regressão - cadastro rejeita sobrenome inválido sem persistir
+  ---
+  duration_ms: 2.8362
+  type: 'test'
+  ...
+# Subtest: regressão - cadastro rejeita senha inválido sem persistir
+ok 91 - regressão - cadastro rejeita senha inválido sem persistir
+  ---
+  duration_ms: 1.4609
+  type: 'test'
+  ...
+# Subtest: regressão - cadastro rejeita email inválido sem persistir
+ok 92 - regressão - cadastro rejeita email inválido sem persistir
+  ---
+  duration_ms: 1.5132
+  type: 'test'
+  ...
+# Subtest: regressão - cadastro persiste e-mail em minúsculas
+ok 93 - regressão - cadastro persiste e-mail em minúsculas
+  ---
+  duration_ms: 2.2855
+  type: 'test'
+  ...
+# Subtest: regressão - login aceita e-mail com maiúsculas e espaços
+ok 94 - regressão - login aceita e-mail com maiúsculas e espaços
+  ---
+  duration_ms: 1.3761
+  type: 'test'
+  ...
+# Subtest: unitário - /api/tarefas exige autenticação
+ok 95 - unitário - /api/tarefas exige autenticação # SKIP CRUD to do list fora do escopo do ciclo 2
+  ---
+  duration_ms: 0.0365
+  type: 'test'
+  ...
+# Subtest: unitário - /api/usuario-logado exige autenticação
+ok 96 - unitário - /api/usuario-logado exige autenticação
+  ---
+  duration_ms: 1.3193
+  type: 'test'
+  ...
+# Subtest: unitário - /api/perfil exige autenticação
+ok 97 - unitário - /api/perfil exige autenticação
+  ---
+  duration_ms: 1.3364
+  type: 'test'
+  ...
+# Subtest: unitário - tarefas lista apenas registros do usuário autenticado
+ok 98 - unitário - tarefas lista apenas registros do usuário autenticado # SKIP CRUD to do list fora do escopo do ciclo 2
+  ---
+  duration_ms: 0.0376
+  type: 'test'
+  ...
+# Subtest: unitário - tarefas cria e exclui registro do proprietário
+ok 99 - unitário - tarefas cria e exclui registro do proprietário # SKIP CRUD to do list fora do escopo do ciclo 2
+  ---
+  duration_ms: 0.0243
+  type: 'test'
+  ...
+# Subtest: unitário - tarefas impede exclusão de registro de outra pessoa
+ok 100 - unitário - tarefas impede exclusão de registro de outra pessoa # SKIP CRUD to do list fora do escopo do ciclo 2
+  ---
+  duration_ms: 0.0181
+  type: 'test'
+  ...
+1..100
+# tests 100
+# suites 0
+# pass 88
+# fail 5
+# cancelled 0
+# skipped 7
+# todo 0
+# duration_ms 3383.4032
