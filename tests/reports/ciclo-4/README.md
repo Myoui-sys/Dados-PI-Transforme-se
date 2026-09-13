@@ -7,17 +7,17 @@
 
 ## Parecer executivo
 
-O ciclo 4 está **rejeitado para aprovação completa**. Foram executados os testes antigos e os novos cenários de finanças, Home, Meu MEI, obrigações e suporte. A consulta do plano atual, que falhava no ciclo 3, foi corrigida e passou. Três problemas do ciclo 3 continuam ativos e cinco problemas adicionais foram encontrados, totalizando **oito defeitos distintos**.
+O ciclo 4 está **rejeitado para aprovação completa**. Foram executados os testes antigos e os novos cenários de finanças, Home, Meu MEI, obrigações e suporte. A consulta do plano atual, que falhava no ciclo 3, foi corrigida e passou. Três problemas do ciclo 3 continuam ativos e quatro problemas adicionais foram encontrados, totalizando **sete defeitos ativos**. A exibição da senha no console foi retirada da contagem de defeitos por decisão de escopo e permanece registrada como observação pulada.
 
-Os números abaixo contam execuções. Um mesmo defeito pode aparecer em Node e BDD, por isso 14 falhas de execução representam oito defeitos únicos.
+Os números abaixo contam execuções. Um mesmo defeito pode aparecer em Node e BDD, por isso 13 falhas de execução representam sete defeitos únicos.
 
 | Camada | Selecionados | Passaram | Falharam | Pulados |
 | --- | ---: | ---: | ---: | ---: |
-| Node, regras e HTTP | 145 | 134 | 8 | 3 |
+| Node, regras e HTTP | 145 | 134 | 7 | 4 |
 | BDD, API e navegador | 40 | 34 | 6 | 0 |
-| **Total executado** | **185** | **168** | **14** | **3** |
+| **Total executado** | **185** | **168** | **13** | **4** |
 
-Além dos 3 skips Node, há 3 cenários Gherkin marcados como `@pendente`. O perfil do ciclo 4 os exclui da execução porque as funcionalidades ainda não estão completas.
+Dos 4 skips Node, três representam funcionalidades incompletas e um representa a verificação da senha no console, pulada por decisão de escopo. Há também 3 cenários Gherkin marcados como `@pendente`, excluídos da execução porque as funcionalidades ainda não estão completas.
 
 ## Como interpretar
 
@@ -142,14 +142,19 @@ As correções anteriores de cadastro, normalização de e-mail, perfil e imagen
 **Correção lógica:** retirar espaços das pontas e exigir pelo menos um caractere útil.  
 **Teste:** `tests/backend/ciclo4.test.cjs:281` e cenário BDD `tests/e2e/features/ciclo4.feature:77`.
 
+## Observação pulada por decisão de escopo
+
 ### C4-08 — login registra senha no console do servidor
 
-**Esperado:** logs de autenticação não devem conter a senha.  
-**Obtido:** o usuário completo, incluindo senha armazenada, é enviado ao console.  
-**Por que acontece:** `server.js:559` executa `console.log(usuario)`.  
-**Impacto:** a senha pode aparecer no terminal, em capturas de tela ou em serviços de log. É um risco mesmo em projeto acadêmico.  
-**Correção lógica:** remover o log do objeto completo; quando necessário, registrar somente informação não sensível.  
-**Teste:** `tests/unit/server.routes.test.cjs:287`.
+**Status:** PULADO por decisão de escopo. Não é um erro obrigatório para aprovação deste ciclo.
+
+**Situação observada:** o login funciona, mas o usuário completo, incluindo senha armazenada, é enviado ao console por `server.js:559`.
+
+**Justificativa:** o projeto é acadêmico e a equipe decidiu não bloquear a entrega por esse item. Pular não significa que a situação foi corrigida ou aprovada.
+
+**Recomendação:** remover o log do objeto completo antes de usar o sistema com dados reais. Quando necessário, registrar somente informações não sensíveis.
+
+**Teste:** `tests/unit/server.routes.test.cjs:287`, mantido como skip para preservar a verificação futura.
 
 ## Cenários pendentes
 

@@ -2,164 +2,164 @@
 > test:ciclo4
 > node --test --test-concurrency=1 tests/unit/*.test.cjs tests/backend/*.test.cjs
 
-✔ C3 rotas - /assinaturas entrega HTML (763.2909ms)
-✔ C3 rotas - /mentorias entrega HTML (21.6846ms)
-✔ C3 rotas - /configuracoes entrega HTML (8.9375ms)
-✔ C3 rotas - /obrigacoes entrega HTML (7.0443ms)
-✔ C3 rotas - /guias entrega HTML (14.2031ms)
-✔ C3 rotas - /visaoGeral entrega HTML (5.4644ms)
-✔ C3 mentorias - catálogo associa cada mentoria ao professor (8.7351ms)
-✔ C3 planos - catálogo público completo sem escrita (16.1548ms)
-✔ C3 autenticação - GET /api/planos/atual bloqueia visitante (15.9723ms)
-✔ C3 autenticação - POST /api/planos/assinar bloqueia visitante (15.7699ms)
-✔ C3 autenticação - GET /api/eventos bloqueia visitante (4.4948ms)
-✔ C3 autenticação - POST /eventos bloqueia visitante (11.689ms)
-✔ C3 autenticação - PUT /eventos/1 bloqueia visitante (6.6671ms)
-✔ C3 autenticação - DELETE /eventos/1 bloqueia visitante (5.7001ms)
-✔ C3 autenticação - GET /api/tarefas bloqueia visitante (18.3756ms)
-✔ C3 autenticação - POST /tarefas bloqueia visitante (5.4675ms)
-✔ C3 autenticação - PUT /tarefas/1 bloqueia visitante (11.0171ms)
-✔ C3 autenticação - DELETE /tarefas/1 bloqueia visitante (13.5648ms)
-✔ C3 planos - assinar plano 1 persiste e preserva outros usuários (9.6437ms)
-✔ C3 planos - assinar plano 2 persiste e preserva outros usuários (21.9433ms)
-✔ C3 planos - assinar plano 3 persiste e preserva outros usuários (9.4109ms)
-✔ C3 planos - rejeita plano 999 (5.2473ms)
-✔ C3 planos - rejeita plano null (6.3623ms)
-✔ C3 planos - rejeita plano invalido (7.4355ms)
-✔ C3 planos - consulta autenticada retorna plano assinado (15.6934ms)
-✔ C3 planos - novo usuário recebe plano gratuito (31.528ms)
-✔ C3 tarefas - criar, listar, editar e excluir com persistência (64.1745ms)
-✔ C3 tarefas - PUT bloqueia outro proprietário (18.1239ms)
-✔ C3 tarefas - DELETE bloqueia outro proprietário (14.9367ms)
-✔ C3 tarefas - PUT inexistente retorna 404 (7.4827ms)
-✔ C3 tarefas - DELETE inexistente retorna 404 (9.2383ms)
-✔ C3 tarefas - criação sem título não persiste (6.8074ms)
-✖ C3 tarefas - edição inválida não altera memória nem disco (37.3566ms)
-✔ C3 eventos - criar, listar, editar e excluir com persistência (60.0555ms)
-✔ C3 eventos - PUT bloqueia outro proprietário (21.2459ms)
-✔ C3 eventos - DELETE bloqueia outro proprietário (16.006ms)
-✔ C3 eventos - PUT inexistente retorna 404 (6.4762ms)
-✔ C3 eventos - DELETE inexistente retorna 404 (5.3595ms)
-✔ C3 eventos - criação sem título não persiste (14.2486ms)
-✖ C3 eventos - edição inválida não altera memória nem disco (47.8954ms)
-✔ C3 calendário - filtro por mês e ano e isolamento do usuário (5.3723ms)
-✔ C3 calendário - rejeita data inválida "11/09/2026" (7.568ms)
-✔ C3 calendário - rejeita data inválida "" (16.4686ms)
-✖ C3 calendário - rejeita data inválida "2026-02-30" (7.4785ms)
-✔ C3 regressão perfil - rejeita e-mail null e mantém sessão (16.7301ms)
-✔ C3 regressão perfil - rejeita e-mail 123 e mantém sessão (8.4225ms)
-✔ C3 regressão perfil - rejeita e-mail {} e mantém sessão (28.1224ms)
-✔ C3 regressão perfil - rejeita e-mail [] e mantém sessão (32.3796ms)
-✔ C3 regressão perfil - rejeita e-mail "" e mantém sessão (14.1799ms)
-✔ C3 regressão perfil - rejeita e-mail " " e mantém sessão (18.8656ms)
-✔ C3 regressão perfil - rejeita e-mail "sem-arroba" e mantém sessão (30.1464ms)
-✔ C3 regressão perfil - rejeita e-mail "a@b" e mantém sessão (31.1479ms)
-✔ C3 regressão perfil - rejeita e-mail "a b@teste.com" e mantém sessão (15.4381ms)
-✔ C4 página - /home entrega HTML não vazio (759.635ms)
-✔ C4 página - /financeiro entrega HTML não vazio (13.9299ms)
-✔ C4 página - /suporte entrega HTML não vazio (7.2143ms)
-✔ C4 página - /obrigacoes entrega HTML não vazio (5.6666ms)
-✔ C4 página - /visaoGeral entrega HTML não vazio (5.5734ms)
-✔ C4 regressão C3-01 - plano atual responde após correção da importação (4.9783ms)
-✔ C4 financeiro - GET /api/financeiro/resumo?mes=9&ano=2026 bloqueia visitante (8.8061ms)
-✔ C4 financeiro - GET /api/financeiro/movimentacoes bloqueia visitante (20.2928ms)
-✔ C4 financeiro - POST /api/financeiro/movimentacoes bloqueia visitante (15.7656ms)
-✔ C4 financeiro - DELETE /api/financeiro/movimentacoes/1 bloqueia visitante (6.7096ms)
-✔ C4 financeiro - resumo calcula entradas, saídas, lucro e percentuais (7.0627ms)
-✖ C4 integração Home - resumo fornece comparação com o mês anterior (6.8594ms)
-✔ C4 financeiro - resumo isola movimentações de outro usuário (3.8851ms)
-✔ C4 financeiro - resumo rejeita filtro inválido /api/financeiro/resumo?mes=13&ano=2026 (8.6089ms)
-✔ C4 financeiro - resumo rejeita filtro inválido /api/financeiro/resumo?mes=9&ano=abc (4.5456ms)
-✔ C4 financeiro - lista filtra proprietário, tipo e ordena por data (3.5287ms)
-✔ C4 financeiro - lista rejeita tipo inválido (7.5524ms)
-✔ C4 financeiro - cria e exclui movimentação própria com persistência (20.1061ms)
-✔ C4 financeiro - rejeita movimentação inválida {"descricao":"","valor":10,"tipo":"entrada","data":"2026-09-13"} (15.4789ms)
-✔ C4 financeiro - rejeita movimentação inválida {"descricao":"QA","valor":0,"tipo":"entrada","data":"2026-09-13"} (19.361ms)
-✔ C4 financeiro - rejeita movimentação inválida {"descricao":"QA","valor":10,"tipo":"credito","data":"2026-09-13"} (5.9718ms)
-✔ C4 financeiro - rejeita movimentação inválida {"descricao":"QA","valor":10,"tipo":"entrada","data":"13/09/2026"} (5.796ms)
-✖ C4 financeiro - rejeita data inexistente no calendário (5.7545ms)
-✖ C4 financeiro - descrição não textual retorna erro de validação (6.6873ms)
-✔ C4 financeiro - outro usuário não pode excluir movimentação alheia (20.7627ms)
-✔ C4 financeiro - excluir identificador inexistente retorna 404 (2.9667ms)
-✔ C4 Meu MEI - consulta de negócio exige autenticação (3.8801ms)
-✔ C4 Meu MEI - usuário sem negócio recebe estrutura vazia (5.7931ms)
-✔ C4 Meu MEI - salva e consulta negócio do usuário (31.1097ms)
-✔ C4 Meu MEI - rejeita negócio incompleto sem persistir (6.9216ms)
-✔ C4 obrigações - catálogo público corresponde ao db.json (4.3633ms)
-✔ C4 obrigações - alteração exige autenticação (3.7985ms)
-✔ C4 obrigações - rejeita status inválido sem persistir (6.7128ms)
-✔ C4 obrigações - atualiza status válido com persistência (8.1393ms)
-✔ C4 ajuda - lista categorias e filtra perguntas (26.3083ms)
-✔ C4 ajuda - busca encontra termo sem diferenciar maiúsculas (4.5322ms)
-✖ C4 ajuda - busca composta apenas por espaços deve ser rejeitada (11.9182ms)
-✔ C4 ajuda - GET tickets bloqueia visitante (5.3163ms)
-✔ C4 ajuda - POST tickets bloqueia visitante (3.1029ms)
-✔ C4 ajuda - cria ticket e lista somente para o proprietário (42.7667ms)
-✔ C4 ajuda - rejeita ticket incompleto {"assunto":"","mensagem":"Mensagem"} (15.9217ms)
-✔ C4 ajuda - rejeita ticket incompleto {"assunto":"Assunto","mensagem":" "} (15.4554ms)
-﹣ C4 integração pendente - guias não possui coleção no banco (0.2761ms) # A página existe, mas db.json não contém a coleção guias; integrar antes de validar /api/guias
-﹣ C4 integração pendente - calendário definitivo está vazio (0.1112ms) # public/Atividades/Calendário/index.html está vazio; a API de eventos foi testada separadamente
-﹣ C4 integração pendente - lembretes ainda não foi implementado (0.0578ms) # public/Atividades/Lembretes/index.html está vazio e não há API de lembretes
-✔ API cursos - GET público retorna catálogo completo em JSON (708.5391ms)
-✔ API cursos - sessão autenticada recebe o mesmo catálogo (36.3501ms)
-✔ API cursos - consulta não altera os dados persistidos (12.1129ms)
-✔ API perfil - GET sem sessão retorna 401 (6.1273ms)
-✔ API perfil - GET retorna campos do próprio usuário sem senha (21.5016ms)
-✔ API perfil - PUT sem sessão bloqueia alteração (10.0145ms)
-✔ API perfil - PUT atualiza campos, sessão e persistência (56.4094ms)
-✔ API perfil - PUT recusa e-mail de outro usuário sem persistir (23.3996ms)
-✔ API perfil - troca de e-mail normaliza chave, sessão e próximo login (70.4452ms)
-✔ API perfil - login com maiúsculas e espaços deve permitir consultar perfil (8.9153ms)
-✔ API perfil - PUT sem e-mail deve retornar 400 sem alterar banco (20.8553ms)
-✔ API perfil - PUT deve rejeitar e-mail inválido sem persistir (24.7164ms)
-✔ unitário - db.json possui coleções principais (2.0554ms)
-✔ unitário - cursos possuem campos obrigatórios para renderização (0.294ms)
-✔ unitário - imagens dos cursos existem na pasta pública (0.8212ms)
-✔ unitário - cursos referenciam professores existentes (0.297ms)
-✔ unitário - cadastro.js envia os dados para POST /cadastro em JSON (3.9455ms)
-✔ unitário - login.js envia credenciais para POST /login em JSON (0.6392ms)
-✔ regressão - cursos.js deve configurar a largura da imagem com a propriedade correta (0.8458ms)
-✔ C3 regras - plano 1 respeita todas as permissões (3.5807ms)
-✔ C3 regras - plano 2 respeita todas as permissões (2.0405ms)
-✔ C3 regras - plano 3 respeita todas as permissões (0.8201ms)
-✔ C3 regras - plano ausente ou inválido undefined usa Gratuito (0.8412ms)
-✔ C3 regras - plano ausente ou inválido 999 usa Gratuito (0.6136ms)
-✔ C3 regras - middleware com plano null retorna 401 (1.0736ms)
-✔ C3 regras - middleware com plano 1 retorna 403 (0.625ms)
-✔ C3 regras - middleware com plano 3 retorna 200 (0.6109ms)
-✔ unitário - POST /login autentica credenciais válidas e cria sessão (247.7725ms)
-✔ unitário - POST /login rejeita e-mail inexistente (4.9244ms)
-✔ unitário - POST /login rejeita senha incorreta (5.8249ms)
-✔ unitário - POST /cadastro cria usuário novo com próximo id (19.2078ms)
-✔ unitário - POST /cadastro rejeita e-mail duplicado sem gravar banco (6.689ms)
-✔ regressão - POST /cadastro deve validar campos obrigatórios no back-end (7.1562ms)
-✔ regressão - POST /cadastro deve tratar e-mail duplicado sem diferenciar maiúsculas (6.6016ms)
-✖ regressão - POST /login não deve registrar dados sensíveis no console (6.7815ms)
-✔ regressão - cadastro rejeita nome inválido sem persistir (11.6186ms)
-✔ regressão - cadastro rejeita sobrenome inválido sem persistir (10.1392ms)
-✔ regressão - cadastro rejeita senha inválido sem persistir (6.6995ms)
-✔ regressão - cadastro rejeita email inválido sem persistir (4.3582ms)
-✔ regressão - cadastro persiste e-mail em minúsculas (5.1871ms)
-✔ regressão - login aceita e-mail com maiúsculas e espaços (3.7845ms)
-✔ unitário - /api/tarefas exige autenticação (3.7654ms)
-✔ unitário - /api/usuario-logado exige autenticação (3.6165ms)
-✔ unitário - /api/perfil exige autenticação (5.5016ms)
-✔ unitário - tarefas lista apenas registros do usuário autenticado (4.407ms)
-✔ unitário - tarefas cria e exclui registro do proprietário (5.0667ms)
-✔ unitário - tarefas impede exclusão de registro de outra pessoa (5.0855ms)
+✔ C3 rotas - /assinaturas entrega HTML (980.2312ms)
+✔ C3 rotas - /mentorias entrega HTML (29.3895ms)
+✔ C3 rotas - /configuracoes entrega HTML (5.5256ms)
+✔ C3 rotas - /obrigacoes entrega HTML (6.609ms)
+✔ C3 rotas - /guias entrega HTML (4.5055ms)
+✔ C3 rotas - /visaoGeral entrega HTML (4.079ms)
+✔ C3 mentorias - catálogo associa cada mentoria ao professor (4.5473ms)
+✔ C3 planos - catálogo público completo sem escrita (17.1359ms)
+✔ C3 autenticação - GET /api/planos/atual bloqueia visitante (6.0155ms)
+✔ C3 autenticação - POST /api/planos/assinar bloqueia visitante (5.158ms)
+✔ C3 autenticação - GET /api/eventos bloqueia visitante (5.7493ms)
+✔ C3 autenticação - POST /eventos bloqueia visitante (8.1706ms)
+✔ C3 autenticação - PUT /eventos/1 bloqueia visitante (6.2241ms)
+✔ C3 autenticação - DELETE /eventos/1 bloqueia visitante (4.422ms)
+✔ C3 autenticação - GET /api/tarefas bloqueia visitante (4.5727ms)
+✔ C3 autenticação - POST /tarefas bloqueia visitante (12.4174ms)
+✔ C3 autenticação - PUT /tarefas/1 bloqueia visitante (4.5885ms)
+✔ C3 autenticação - DELETE /tarefas/1 bloqueia visitante (10.3949ms)
+✔ C3 planos - assinar plano 1 persiste e preserva outros usuários (7.1932ms)
+✔ C3 planos - assinar plano 2 persiste e preserva outros usuários (10.1042ms)
+✔ C3 planos - assinar plano 3 persiste e preserva outros usuários (9.0677ms)
+✔ C3 planos - rejeita plano 999 (21.4154ms)
+✔ C3 planos - rejeita plano null (5.283ms)
+✔ C3 planos - rejeita plano invalido (4.5298ms)
+✔ C3 planos - consulta autenticada retorna plano assinado (4.7921ms)
+✔ C3 planos - novo usuário recebe plano gratuito (50.717ms)
+✔ C3 tarefas - criar, listar, editar e excluir com persistência (33.376ms)
+✔ C3 tarefas - PUT bloqueia outro proprietário (11.735ms)
+✔ C3 tarefas - DELETE bloqueia outro proprietário (25.0039ms)
+✔ C3 tarefas - PUT inexistente retorna 404 (4.9541ms)
+✔ C3 tarefas - DELETE inexistente retorna 404 (25.3076ms)
+✔ C3 tarefas - criação sem título não persiste (7.6412ms)
+✖ C3 tarefas - edição inválida não altera memória nem disco (30.6974ms)
+✔ C3 eventos - criar, listar, editar e excluir com persistência (60.4828ms)
+✔ C3 eventos - PUT bloqueia outro proprietário (16.9985ms)
+✔ C3 eventos - DELETE bloqueia outro proprietário (15.3653ms)
+✔ C3 eventos - PUT inexistente retorna 404 (6.0789ms)
+✔ C3 eventos - DELETE inexistente retorna 404 (11.7743ms)
+✔ C3 eventos - criação sem título não persiste (16.3081ms)
+✖ C3 eventos - edição inválida não altera memória nem disco (38.2717ms)
+✔ C3 calendário - filtro por mês e ano e isolamento do usuário (4.8275ms)
+✔ C3 calendário - rejeita data inválida "11/09/2026" (5.8715ms)
+✔ C3 calendário - rejeita data inválida "" (17.449ms)
+✖ C3 calendário - rejeita data inválida "2026-02-30" (17.7286ms)
+✔ C3 regressão perfil - rejeita e-mail null e mantém sessão (24.0826ms)
+✔ C3 regressão perfil - rejeita e-mail 123 e mantém sessão (24.0579ms)
+✔ C3 regressão perfil - rejeita e-mail {} e mantém sessão (22.4723ms)
+✔ C3 regressão perfil - rejeita e-mail [] e mantém sessão (28.5261ms)
+✔ C3 regressão perfil - rejeita e-mail "" e mantém sessão (24.2591ms)
+✔ C3 regressão perfil - rejeita e-mail " " e mantém sessão (10.476ms)
+✔ C3 regressão perfil - rejeita e-mail "sem-arroba" e mantém sessão (16.9979ms)
+✔ C3 regressão perfil - rejeita e-mail "a@b" e mantém sessão (22.1862ms)
+✔ C3 regressão perfil - rejeita e-mail "a b@teste.com" e mantém sessão (11.6114ms)
+✔ C4 página - /home entrega HTML não vazio (745.4169ms)
+✔ C4 página - /financeiro entrega HTML não vazio (23.5819ms)
+✔ C4 página - /suporte entrega HTML não vazio (5.3351ms)
+✔ C4 página - /obrigacoes entrega HTML não vazio (6.3941ms)
+✔ C4 página - /visaoGeral entrega HTML não vazio (18.7918ms)
+✔ C4 regressão C3-01 - plano atual responde após correção da importação (7.9449ms)
+✔ C4 financeiro - GET /api/financeiro/resumo?mes=9&ano=2026 bloqueia visitante (10.3149ms)
+✔ C4 financeiro - GET /api/financeiro/movimentacoes bloqueia visitante (7.8665ms)
+✔ C4 financeiro - POST /api/financeiro/movimentacoes bloqueia visitante (7.051ms)
+✔ C4 financeiro - DELETE /api/financeiro/movimentacoes/1 bloqueia visitante (6.4488ms)
+✔ C4 financeiro - resumo calcula entradas, saídas, lucro e percentuais (15.6454ms)
+✖ C4 integração Home - resumo fornece comparação com o mês anterior (6.0863ms)
+✔ C4 financeiro - resumo isola movimentações de outro usuário (6.4492ms)
+✔ C4 financeiro - resumo rejeita filtro inválido /api/financeiro/resumo?mes=13&ano=2026 (4.3846ms)
+✔ C4 financeiro - resumo rejeita filtro inválido /api/financeiro/resumo?mes=9&ano=abc (3.2612ms)
+✔ C4 financeiro - lista filtra proprietário, tipo e ordena por data (3.9261ms)
+✔ C4 financeiro - lista rejeita tipo inválido (2.758ms)
+✔ C4 financeiro - cria e exclui movimentação própria com persistência (27.1989ms)
+✔ C4 financeiro - rejeita movimentação inválida {"descricao":"","valor":10,"tipo":"entrada","data":"2026-09-13"} (9.7515ms)
+✔ C4 financeiro - rejeita movimentação inválida {"descricao":"QA","valor":0,"tipo":"entrada","data":"2026-09-13"} (15.256ms)
+✔ C4 financeiro - rejeita movimentação inválida {"descricao":"QA","valor":10,"tipo":"credito","data":"2026-09-13"} (5.9867ms)
+✔ C4 financeiro - rejeita movimentação inválida {"descricao":"QA","valor":10,"tipo":"entrada","data":"13/09/2026"} (12.9579ms)
+✖ C4 financeiro - rejeita data inexistente no calendário (15.1389ms)
+✖ C4 financeiro - descrição não textual retorna erro de validação (7.7285ms)
+✔ C4 financeiro - outro usuário não pode excluir movimentação alheia (25.0875ms)
+✔ C4 financeiro - excluir identificador inexistente retorna 404 (3.0244ms)
+✔ C4 Meu MEI - consulta de negócio exige autenticação (2.6748ms)
+✔ C4 Meu MEI - usuário sem negócio recebe estrutura vazia (9.0549ms)
+✔ C4 Meu MEI - salva e consulta negócio do usuário (14.9757ms)
+✔ C4 Meu MEI - rejeita negócio incompleto sem persistir (17.7673ms)
+✔ C4 obrigações - catálogo público corresponde ao db.json (3.3927ms)
+✔ C4 obrigações - alteração exige autenticação (2.5911ms)
+✔ C4 obrigações - rejeita status inválido sem persistir (4.2606ms)
+✔ C4 obrigações - atualiza status válido com persistência (22.1783ms)
+✔ C4 ajuda - lista categorias e filtra perguntas (29.8227ms)
+✔ C4 ajuda - busca encontra termo sem diferenciar maiúsculas (2.6601ms)
+✖ C4 ajuda - busca composta apenas por espaços deve ser rejeitada (2.5404ms)
+✔ C4 ajuda - GET tickets bloqueia visitante (4.8243ms)
+✔ C4 ajuda - POST tickets bloqueia visitante (3.7143ms)
+✔ C4 ajuda - cria ticket e lista somente para o proprietário (36.0734ms)
+✔ C4 ajuda - rejeita ticket incompleto {"assunto":"","mensagem":"Mensagem"} (4.8775ms)
+✔ C4 ajuda - rejeita ticket incompleto {"assunto":"Assunto","mensagem":" "} (4.6712ms)
+﹣ C4 integração pendente - guias não possui coleção no banco (0.2072ms) # A página existe, mas db.json não contém a coleção guias; integrar antes de validar /api/guias
+﹣ C4 integração pendente - calendário definitivo está vazio (0.0826ms) # public/Atividades/Calendário/index.html está vazio; a API de eventos foi testada separadamente
+﹣ C4 integração pendente - lembretes ainda não foi implementado (0.0546ms) # public/Atividades/Lembretes/index.html está vazio e não há API de lembretes
+✔ API cursos - GET público retorna catálogo completo em JSON (749.296ms)
+✔ API cursos - sessão autenticada recebe o mesmo catálogo (48.7971ms)
+✔ API cursos - consulta não altera os dados persistidos (8.6674ms)
+✔ API perfil - GET sem sessão retorna 401 (7.2592ms)
+✔ API perfil - GET retorna campos do próprio usuário sem senha (8.4249ms)
+✔ API perfil - PUT sem sessão bloqueia alteração (9.6243ms)
+✔ API perfil - PUT atualiza campos, sessão e persistência (48.4765ms)
+✔ API perfil - PUT recusa e-mail de outro usuário sem persistir (48.2134ms)
+✔ API perfil - troca de e-mail normaliza chave, sessão e próximo login (72.0689ms)
+✔ API perfil - login com maiúsculas e espaços deve permitir consultar perfil (13.4457ms)
+✔ API perfil - PUT sem e-mail deve retornar 400 sem alterar banco (31.0328ms)
+✔ API perfil - PUT deve rejeitar e-mail inválido sem persistir (33.2757ms)
+✔ unitário - db.json possui coleções principais (1.1629ms)
+✔ unitário - cursos possuem campos obrigatórios para renderização (0.2341ms)
+✔ unitário - imagens dos cursos existem na pasta pública (0.629ms)
+✔ unitário - cursos referenciam professores existentes (0.1647ms)
+✔ unitário - cadastro.js envia os dados para POST /cadastro em JSON (1.7984ms)
+✔ unitário - login.js envia credenciais para POST /login em JSON (0.7095ms)
+✔ regressão - cursos.js deve configurar a largura da imagem com a propriedade correta (0.5912ms)
+✔ C3 regras - plano 1 respeita todas as permissões (1.9145ms)
+✔ C3 regras - plano 2 respeita todas as permissões (1.7431ms)
+✔ C3 regras - plano 3 respeita todas as permissões (0.5037ms)
+✔ C3 regras - plano ausente ou inválido undefined usa Gratuito (0.5532ms)
+✔ C3 regras - plano ausente ou inválido 999 usa Gratuito (0.2905ms)
+✔ C3 regras - middleware com plano null retorna 401 (0.539ms)
+✔ C3 regras - middleware com plano 1 retorna 403 (0.3051ms)
+✔ C3 regras - middleware com plano 3 retorna 200 (0.3364ms)
+✔ unitário - POST /login autentica credenciais válidas e cria sessão (238.2866ms)
+✔ unitário - POST /login rejeita e-mail inexistente (4.3097ms)
+✔ unitário - POST /login rejeita senha incorreta (3.2104ms)
+✔ unitário - POST /cadastro cria usuário novo com próximo id (9.7196ms)
+✔ unitário - POST /cadastro rejeita e-mail duplicado sem gravar banco (7.9304ms)
+✔ regressão - POST /cadastro deve validar campos obrigatórios no back-end (7.037ms)
+✔ regressão - POST /cadastro deve tratar e-mail duplicado sem diferenciar maiúsculas (5.0467ms)
+﹣ regressão - POST /login não deve registrar dados sensíveis no console (0.2372ms) # SKIP
+✔ regressão - cadastro rejeita nome inválido sem persistir (5.4014ms)
+✔ regressão - cadastro rejeita sobrenome inválido sem persistir (3.8676ms)
+✔ regressão - cadastro rejeita senha inválido sem persistir (3.809ms)
+✔ regressão - cadastro rejeita email inválido sem persistir (5.4226ms)
+✔ regressão - cadastro persiste e-mail em minúsculas (5.0272ms)
+✔ regressão - login aceita e-mail com maiúsculas e espaços (3.9426ms)
+✔ unitário - /api/tarefas exige autenticação (5.3888ms)
+✔ unitário - /api/usuario-logado exige autenticação (4.2095ms)
+✔ unitário - /api/perfil exige autenticação (3.9912ms)
+✔ unitário - tarefas lista apenas registros do usuário autenticado (4.1045ms)
+✔ unitário - tarefas cria e exclui registro do proprietário (4.9986ms)
+✔ unitário - tarefas impede exclusão de registro de outra pessoa (3.1715ms)
 ℹ tests 145
 ℹ suites 0
 ℹ pass 134
-ℹ fail 8
+ℹ fail 7
 ℹ cancelled 0
-ℹ skipped 3
+ℹ skipped 4
 ℹ todo 0
-ℹ duration_ms 8814.2598
+ℹ duration_ms 9081.8305
 
 ✖ failing tests:
 
 test at tests\backend\ciclo3.test.cjs:121:5
-✖ C3 tarefas - edição inválida não altera memória nem disco (37.3566ms)
+✖ C3 tarefas - edição inválida não altera memória nem disco (30.6974ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
   
@@ -185,7 +185,7 @@ test at tests\backend\ciclo3.test.cjs:121:5
   }
 
 test at tests\backend\ciclo3.test.cjs:121:5
-✖ C3 eventos - edição inválida não altera memória nem disco (47.8954ms)
+✖ C3 eventos - edição inválida não altera memória nem disco (38.2717ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
   
@@ -211,7 +211,7 @@ test at tests\backend\ciclo3.test.cjs:121:5
   }
 
 test at tests\backend\ciclo3.test.cjs:136:54
-✖ C3 calendário - rejeita data inválida "2026-02-30" (7.4785ms)
+✖ C3 calendário - rejeita data inválida "2026-02-30" (17.7286ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
   
   200 !== 400
@@ -229,7 +229,7 @@ test at tests\backend\ciclo3.test.cjs:136:54
   }
 
 test at tests\backend\ciclo4.test.cjs:102:1
-✖ C4 integração Home - resumo fornece comparação com o mês anterior (6.8594ms)
+✖ C4 integração Home - resumo fornece comparação com o mês anterior (6.0863ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
   + actual - expected
   
@@ -249,7 +249,7 @@ test at tests\backend\ciclo4.test.cjs:102:1
   }
 
 test at tests\backend\ciclo4.test.cjs:174:1
-✖ C4 financeiro - rejeita data inexistente no calendário (5.7545ms)
+✖ C4 financeiro - rejeita data inexistente no calendário (15.1389ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
   
   201 !== 400
@@ -267,7 +267,7 @@ test at tests\backend\ciclo4.test.cjs:174:1
   }
 
 test at tests\backend\ciclo4.test.cjs:183:1
-✖ C4 financeiro - descrição não textual retorna erro de validação (6.6873ms)
+✖ C4 financeiro - descrição não textual retorna erro de validação (7.7285ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
   
   500 !== 400
@@ -285,7 +285,7 @@ test at tests\backend\ciclo4.test.cjs:183:1
   }
 
 test at tests\backend\ciclo4.test.cjs:281:1
-✖ C4 ajuda - busca composta apenas por espaços deve ser rejeitada (11.9182ms)
+✖ C4 ajuda - busca composta apenas por espaços deve ser rejeitada (2.5404ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
   
   200 !== 400
@@ -298,23 +298,6 @@ test at tests\backend\ciclo4.test.cjs:281:1
     code: 'ERR_ASSERTION',
     actual: 200,
     expected: 400,
-    operator: 'strictEqual',
-    diff: 'simple'
-  }
-
-test at tests\unit\server.routes.test.cjs:287:1
-✖ regressão - POST /login não deve registrar dados sensíveis no console (6.7815ms)
-  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
-  true !== false
-  
-      at TestContext.<anonymous> (C:\Users\shiny\Dados-PI-Transforme-se\tests\unit\server.routes.test.cjs:299:12)
-      at async Test.run (node:internal/test_runner/test:1332:7)
-      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
-    generatedMessage: true,
-    code: 'ERR_ASSERTION',
-    actual: true,
-    expected: false,
     operator: 'strictEqual',
     diff: 'simple'
   }

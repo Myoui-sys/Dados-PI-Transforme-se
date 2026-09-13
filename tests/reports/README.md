@@ -2,7 +2,7 @@
 
 ## Ciclo atual — 4
 
-O [relatório do ciclo 4](ciclo-4/README.md) registra a regressão completa e as novas funcionalidades de finanças, Home, Meu MEI, obrigações e suporte: **185 verificações executadas, 168 aprovações, 14 falhas e 3 skips Node**. As falhas correspondem a oito defeitos distintos. Outros três cenários Gherkin permanecem pendentes por falta de implementação.
+O [relatório do ciclo 4](ciclo-4/README.md) registra a regressão completa e as novas funcionalidades de finanças, Home, Meu MEI, obrigações e suporte: **185 verificações executadas, 168 aprovações, 13 falhas e 4 skips Node**. As falhas correspondem a sete defeitos ativos. Um dos skips foi uma decisão de escopo sobre a senha no console; outros três cenários Gherkin permanecem pendentes por falta de implementação.
 
 O [relatório do ciclo 3](ciclo-3/README.md) permanece preservado como histórico da rodada anterior.
 
