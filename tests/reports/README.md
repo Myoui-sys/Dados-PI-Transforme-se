@@ -1,8 +1,10 @@
 # Relatórios de QA
 
-## Ciclo atual — 3
+## Ciclo atual — 4
 
-O [relatório do ciclo 3](ciclo-3/README.md) registra as novas funcionalidades e a confirmação das correções anteriores: **125 verificações, 112 aprovações, 6 falhas e 7 skips**. Inclui os comandos atuais e as evidências. Os dados abaixo descrevem o histórico dos ciclos 1 e 2; seus comandos e classificações refletem aquela época.
+O [relatório do ciclo 4](ciclo-4/README.md) registra a regressão completa e as novas funcionalidades de finanças, Home, Meu MEI, obrigações e suporte: **185 verificações executadas, 168 aprovações, 14 falhas e 3 skips Node**. As falhas correspondem a oito defeitos distintos. Outros três cenários Gherkin permanecem pendentes por falta de implementação.
+
+O [relatório do ciclo 3](ciclo-3/README.md) permanece preservado como histórico da rodada anterior.
 
 ## Histórico dos dois primeiros ciclos
 
@@ -14,6 +16,8 @@ Este relatório ajuda a equipe a entender o que foi verificado, o que melhorou e
 
 - [Ciclo 1](ciclo-1/README.md): relatório, resultados e [Word histórico](ciclo-1/relatorio-detalhado.docx).
 - [Ciclo 2](ciclo-2/README.md): relatório, cenários por resultado, [Word atualizado](ciclo-2/relatorio-detalhado.docx) e [evidências compactadas](ciclo-2/evidencias.zip).
+- [Ciclo 3](ciclo-3/README.md): regressões, novas funcionalidades, Word e evidências da terceira rodada.
+- [Ciclo 4](ciclo-4/README.md): regressão completa, novas funcionalidades, Word e evidências da quarta rodada.
 
 Cada ciclo tem um único Markdown. Este arquivo reúne a visão geral, as explicações e os comandos de execução. Os documentos Word foram preservados; caminhos antigos citados dentro deles se referem à organização anterior.
 

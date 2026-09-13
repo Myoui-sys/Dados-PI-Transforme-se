@@ -11,7 +11,14 @@ test("unitário - db.json possui coleções principais", () => {
     assert.ok(db.cursos);
     assert.ok(db.professores);
     assert.ok(db.tarefas);
-    assert.ok(db.saldos);
+    assert.ok(db.movimentacoes);
+    assert.ok(db.eventos);
+    assert.ok(db.planos);
+    assert.ok(db.negocios);
+    assert.ok(db.obrigacoes);
+    assert.ok(db.categoriasAjuda);
+    assert.ok(db.perguntasFrequentes);
+    assert.ok(db.tickets);
 });
 
 test("unitário - cursos possuem campos obrigatórios para renderização", () => {

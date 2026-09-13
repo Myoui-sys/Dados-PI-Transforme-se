@@ -28,10 +28,7 @@ before(async () => {
 after(async () => { await stopApp(app); assert.deepEqual(fs.readFileSync(originalPath), original); });
 
 for (const route of ['/assinaturas', '/mentorias', '/configuracoes', '/obrigacoes', '/guias', '/visaoGeral']) {
-    const pendente = ['/obrigacoes', '/visaoGeral'].includes(route);
-    test(`C3 rotas - ${route} entrega HTML`, {
-        skip: pendente ? 'Frontend do MeuMEI ainda não implementado; reativar quando a página estiver pronta para integração' : false
-    }, async () => {
+    test(`C3 rotas - ${route} entrega HTML`, async () => {
         const r = await api(route); assert.equal(r.status, 200);
         assert.match(r.headers.get('content-type'), /text\/html/);
         assert.match(await r.text(), /<html/i);

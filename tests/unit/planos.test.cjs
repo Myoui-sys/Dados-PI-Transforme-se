@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const fixture = require('../../db.json');
-const { pegarPlanoDoUsuario, usuarioTemAcesso, exigirFeature } = require('../../public/pages/logic/planos/planos.js');
+const { pegarPlanoDoUsuario, usuarioTemAcesso, exigirFeature } = require('../../public/scripts/planos.js');
 for (const id of [1, 2, 3]) test(`C3 regras - plano ${id} respeita todas as permissões`, () => {
     const db = structuredClone(fixture); db.usuarios['qa@teste.com'] = { id_usuario: 999, id_plano: id };
     assert.deepEqual(pegarPlanoDoUsuario(db, 999), db.planos[id]);

@@ -1,0 +1,116 @@
+
+> test:bdd
+> cucumber-js
+
+
+Failed scenarios:
+  1) Preservar tarefa inteira quando a edição contém status inválido # tests\e2e\features\ciclo4.feature:16
+       E a tarefa deve permanecer totalmente inalterada # tests\e2e\steps\ciclo4.steps.cjs:48
+           AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+           + actual - expected
+           
+             {
+               descricao: '',
+               id: 14,
+               id_usuario: 1,
+               status: 'pendente',
+           +   titulo: 'Título que não deve permanecer'
+           -   titulo: 'Tarefa original ciclo 4'
+             }
+           
+               + expected - actual
+           
+                  "descricao": ""
+                  "id": 14
+                  "id_usuario": 1
+                  "status": "pendente"
+               -  "titulo": "Título que não deve permanecer"
+               +  "titulo": "Tarefa original ciclo 4"
+                }
+           
+               at World.<anonymous> (C:\Users\shiny\Dados-PI-Transforme-se\tests\e2e\steps\ciclo4.steps.cjs:50:12)
+  2) Preservar evento inteiro quando a edição contém título vazio # tests\e2e\features\ciclo4.feature:24
+       E o evento deve permanecer totalmente inalterado # tests\e2e\steps\ciclo4.steps.cjs:66
+           AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+           + actual - expected
+           
+             {
+           +   data: '2026-12-01',
+           -   data: '2026-09-13',
+               descricao: '',
+               id: 3,
+               id_usuario: 1,
+               titulo: 'Evento original ciclo 4'
+             }
+           
+               + expected - actual
+           
+                {
+               -  "data": "2026-12-01"
+               +  "data": "2026-09-13"
+                  "descricao": ""
+                  "id": 3
+                  "id_usuario": 1
+                  "titulo": "Evento original ciclo 4"
+           
+               at World.<anonymous> (C:\Users\shiny\Dados-PI-Transforme-se\tests\e2e\steps\ciclo4.steps.cjs:68:12)
+  3) Rejeitar evento com dia inexistente # tests\e2e\features\ciclo4.feature:32
+       Então a consulta do ciclo quatro deve responder com status 400 # tests\e2e\steps\ciclo4.steps.cjs:25
+           AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+           
+           200 !== 400
+           
+               + expected - actual
+           
+               -200
+               +400
+           
+               at World.<anonymous> (C:\Users\shiny\Dados-PI-Transforme-se\tests\e2e\steps\ciclo4.steps.cjs:26:12)
+  4) Carregar o resumo financeiro da página inicial sem erro de integração # tests\e2e\features\ciclo4.feature:45
+       E a página inicial não deve registrar erro ao carregar o resumo # tests\e2e\steps\ciclo4.steps.cjs:106
+           AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+           + actual - expected
+           
+           + [
+           +   "Erro ao carregar resumo: TypeError: Cannot read properties of undefined (reading 'entrada')\n" +
+           +     '    at carregarResumoFinanceiro (http://127.0.0.1:3137/scripts/home.js:113:22)'
+           + ]
+           - []
+           
+               + expected - actual
+           
+               -[
+               -  "Erro ao carregar resumo: TypeError: Cannot read properties of undefined (reading 'entrada')\n    at carregarResumoFinanceiro (http://127.0.0.1:3137/scripts/home.js:113:22)"
+               -]
+               +[]
+           
+               at World.<anonymous> (C:\Users\shiny\Dados-PI-Transforme-se\tests\e2e\steps\ciclo4.steps.cjs:108:12)
+  5) Rejeitar movimentação financeira com dia inexistente # tests\e2e\features\ciclo4.feature:65
+       Então a consulta do ciclo quatro deve responder com status 400 # tests\e2e\steps\ciclo4.steps.cjs:25
+           AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+           
+           201 !== 400
+           
+               + expected - actual
+           
+               -201
+               +400
+           
+               at World.<anonymous> (C:\Users\shiny\Dados-PI-Transforme-se\tests\e2e\steps\ciclo4.steps.cjs:26:12)
+  6) Rejeitar busca contendo somente espaços # tests\e2e\features\ciclo4.feature:77
+       Então a consulta do ciclo quatro deve responder com status 400 # tests\e2e\steps\ciclo4.steps.cjs:25
+           AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+           
+           200 !== 400
+           
+               + expected - actual
+           
+               -200
+               +400
+           
+               at World.<anonymous> (C:\Users\shiny\Dados-PI-Transforme-se\tests\e2e\steps\ciclo4.steps.cjs:26:12)
+
+2 hooks (2 passed)
+40 scenarios (34 passed, 6 failed)
+235 steps (229 passed, 6 failed)
+0m 14.699s (0m 14.520s executing your code)

@@ -7,9 +7,9 @@ When("faço login com email {string} e senha {string}", async function(email, se
     await this.page.locator('button[type="submit"]').click();
 });
 
-Then("devo ser redirecionado para a página de cursos", async function() {
-    await this.page.waitForURL("**/cursos", { timeout: 5000 });
-    assert.match(this.page.url(), /\/cursos$/);
+Then("devo ser redirecionado para a página inicial", async function() {
+    await this.page.waitForURL("**/home", { timeout: 5000 });
+    assert.match(this.page.url(), /\/home$/);
 });
 
 Then("devo ver a mensagem de login {string}", async function(mensagemEsperada) {
@@ -34,4 +34,14 @@ Then("a sessão deve identificar o usuário {string} com email {string}", async 
     assert.equal(response.status(), 200);
     assert.equal(usuario.nome, nome);
     assert.equal(usuario.email, email);
+});
+
+Then("devo visualizar o usuário {string} na página inicial", async function(nome) {
+    const elemento = this.page.locator("#nome-usuario");
+    await elemento.waitFor({ state: "visible", timeout: 5000 });
+    await this.page.waitForFunction(
+        valor => document.getElementById("nome-usuario")?.textContent.trim() === valor,
+        nome
+    );
+    assert.equal((await elemento.textContent()).trim(), nome);
 });

@@ -8,9 +8,9 @@ Funcionalidade: Login de usuário
   Cenário: Login com credenciais válidas
     Dado que estou na página de login
     Quando faço login com email "sabrina@gmail.com" e senha "123456"
-    Então devo ser redirecionado para a página de cursos
+    Então devo ser redirecionado para a página inicial
     E a sessão deve identificar o usuário "Sabrina Barros" com email "sabrina@gmail.com"
-    E devo visualizar 2 cursos listados
+    E devo visualizar o usuário "Sabrina Barros" na página inicial
 
   @aprovado
   Cenário: Login com e-mail inexistente

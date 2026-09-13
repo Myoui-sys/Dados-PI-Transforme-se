@@ -129,6 +129,10 @@ function carregarServidorComBanco(dbFixture = JSON.parse(fs.readFileSync(dbPath,
                 return { setDefaultCACertificates() {} };
             }
 
+            if (nomeDoModulo.startsWith(".")) {
+                return require(path.resolve(projectRoot, nomeDoModulo));
+            }
+
             return require(nomeDoModulo);
         }
     };
@@ -280,7 +284,7 @@ test("regressão - POST /cadastro deve tratar e-mail duplicado sem diferenciar m
     assert.equal(servidor.escritas.length, 0);
 });
 
-test("rejeitado - POST /login não deve registrar dados sensíveis no console", { skip: "Fora do escopo do ciclo 2 por solicitação do usuário" }, async () => {
+test("regressão - POST /login não deve registrar dados sensíveis no console", async () => {
     const servidor = carregarServidorComBanco();
     const request = {
         body: {
@@ -330,7 +334,7 @@ test("regressão - login aceita e-mail com maiúsculas e espaços", async () => 
 });
 
 for (const rota of ["/api/tarefas", "/api/usuario-logado", "/api/perfil"]) {
-    test(`unitário - ${rota} exige autenticação`, { skip: rota === "/api/tarefas" ? "CRUD to do list fora do escopo do ciclo 2" : false }, () => {
+    test(`unitário - ${rota} exige autenticação`, () => {
         const servidor = carregarServidorComBanco();
         const response = criarResposta();
         servidor.rotas.get.get(rota)({ session: {} }, response);
@@ -339,7 +343,7 @@ for (const rota of ["/api/tarefas", "/api/usuario-logado", "/api/perfil"]) {
     });
 }
 
-test("unitário - tarefas lista apenas registros do usuário autenticado", { skip: "CRUD to do list fora do escopo do ciclo 2" }, () => {
+test("unitário - tarefas lista apenas registros do usuário autenticado", () => {
     const servidor = carregarServidorComBanco();
     const response = criarResposta();
     servidor.rotas.get.get("/api/tarefas")({ session: { usuario: { id_usuario: 1 } } }, response);
@@ -347,7 +351,7 @@ test("unitário - tarefas lista apenas registros do usuário autenticado", { ski
     assert.ok(response.jsonBody.every(tarefa => tarefa.id_usuario === 1));
 });
 
-test("unitário - tarefas cria e exclui registro do proprietário", { skip: "CRUD to do list fora do escopo do ciclo 2" }, async () => {
+test("unitário - tarefas cria e exclui registro do proprietário", async () => {
     const servidor = carregarServidorComBanco();
     const session = { usuario: { id_usuario: 1 } };
     const response = criarResposta();
@@ -364,7 +368,7 @@ test("unitário - tarefas cria e exclui registro do proprietário", { skip: "CRU
     assert.equal(servidor.escritas.length, 2);
 });
 
-test("unitário - tarefas impede exclusão de registro de outra pessoa", { skip: "CRUD to do list fora do escopo do ciclo 2" }, () => {
+test("unitário - tarefas impede exclusão de registro de outra pessoa", () => {
     const servidor = carregarServidorComBanco();
     const response = criarResposta();
     servidor.rotas.delete.get("/tarefas/:id")({ session: { usuario: { id_usuario: 2 } }, params: { id: "1" } }, response);

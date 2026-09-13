@@ -1,0 +1,1240 @@
+[
+  {
+    "description": "  Como equipe do Projeto Integrador Transforme-se\n  Quero validar as correções anteriores e as novas áreas\n  Para saber o que está pronto para integrar ao front-end",
+    "elements": [
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;confirmar-a-correção-da-consulta-do-plano-atual",
+        "keyword": "Cenário",
+        "line": 9,
+        "name": "Confirmar a correção da consulta do plano atual",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 395008499
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 53839699
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 10,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 12618899
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 11,
+            "name": "consulto meu plano atual no ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:21"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 413900
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 12,
+            "name": "a consulta do ciclo quatro deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1262700
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 13,
+            "name": "devo receber um plano válido",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:29"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 37298900
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 8
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;preservar-tarefa-inteira-quando-a-edição-contém-status-inválido",
+        "keyword": "Cenário",
+        "line": 16,
+        "name": "Preservar tarefa inteira quando a edição contém status inválido",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 256322699
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 9048800
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 17,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 8333200
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 18,
+            "name": "criei uma tarefa para testar edição inválida",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:34"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 8189100
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 19,
+            "name": "edito a tarefa com título novo e status inválido",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:42"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 160200
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 20,
+            "name": "a consulta do ciclo quatro deve responder com status 400",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 12559600,
+              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    descricao: '',\n    id: 14,\n    id_usuario: 1,\n    status: 'pendente',\n+   titulo: 'Título que não deve permanecer'\n-   titulo: 'Tarefa original ciclo 4'\n  }\n\n    + expected - actual\n\n       \"descricao\": \"\"\n       \"id\": 14\n       \"id_usuario\": 1\n       \"status\": \"pendente\"\n    -  \"titulo\": \"Título que não deve permanecer\"\n    +  \"titulo\": \"Tarefa original ciclo 4\"\n     }\n\n    at World.<anonymous> (C:\\Users\\shiny\\Dados-PI-Transforme-se\\tests\\e2e\\steps\\ciclo4.steps.cjs:50:12)"
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 21,
+            "name": "a tarefa deve permanecer totalmente inalterada",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:48"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 21849899
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@reprovado",
+            "line": 15
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;preservar-evento-inteiro-quando-a-edição-contém-título-vazio",
+        "keyword": "Cenário",
+        "line": 24,
+        "name": "Preservar evento inteiro quando a edição contém título vazio",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 277884700
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13765499
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 25,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 8730500
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 26,
+            "name": "criei um evento para testar edição inválida",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:53"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 6548399
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 27,
+            "name": "edito o evento com data nova e título vazio",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:60"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 235200
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 28,
+            "name": "a consulta do ciclo quatro deve responder com status 400",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 8468300,
+              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   data: '2026-12-01',\n-   data: '2026-09-13',\n    descricao: '',\n    id: 3,\n    id_usuario: 1,\n    titulo: 'Evento original ciclo 4'\n  }\n\n    + expected - actual\n\n     {\n    -  \"data\": \"2026-12-01\"\n    +  \"data\": \"2026-09-13\"\n       \"descricao\": \"\"\n       \"id\": 3\n       \"id_usuario\": 1\n       \"titulo\": \"Evento original ciclo 4\"\n\n    at World.<anonymous> (C:\\Users\\shiny\\Dados-PI-Transforme-se\\tests\\e2e\\steps\\ciclo4.steps.cjs:68:12)"
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 29,
+            "name": "o evento deve permanecer totalmente inalterado",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:66"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13403899
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@reprovado",
+            "line": 23
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;rejeitar-evento-com-dia-inexistente",
+        "keyword": "Cenário",
+        "line": 32,
+        "name": "Rejeitar evento com dia inexistente",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 209788199
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13015099
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 33,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 6164000
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 34,
+            "name": "crio um evento com a data inexistente \"2026-02-30\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:71"
+            }
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 425699,
+              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n200 !== 400\n\n    + expected - actual\n\n    -200\n    +400\n\n    at World.<anonymous> (C:\\Users\\shiny\\Dados-PI-Transforme-se\\tests\\e2e\\steps\\ciclo4.steps.cjs:26:12)"
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 35,
+            "name": "a consulta do ciclo quatro deve responder com status 400",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11827400
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@reprovado",
+            "line": 31
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;consultar-resumo-financeiro-do-mês",
+        "keyword": "Cenário",
+        "line": 38,
+        "name": "Consultar resumo financeiro do mês",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 205611599
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 10017300
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 39,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4015099
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 40,
+            "name": "consulto o resumo financeiro de setembro de 2026",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:77"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 100400
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 41,
+            "name": "a consulta do ciclo quatro deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 697499
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 42,
+            "name": "o resumo deve apresentar entradas, saídas e lucro corretos",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:81"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11692700
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 37
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;carregar-o-resumo-financeiro-da-página-inicial-sem-erro-de-integração",
+        "keyword": "Cenário",
+        "line": 45,
+        "name": "Carregar o resumo financeiro da página inicial sem erro de integração",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 202155300
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 9750500
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 46,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 433709199
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 47,
+            "name": "abro a página inicial monitorando erros",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:91"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3313599
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 48,
+            "name": "devo visualizar o nome do usuário na página inicial",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:102"
+            }
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 662199,
+              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   \"Erro ao carregar resumo: TypeError: Cannot read properties of undefined (reading 'entrada')\\n\" +\n+     '    at carregarResumoFinanceiro (http://127.0.0.1:3137/scripts/home.js:113:22)'\n+ ]\n- []\n\n    + expected - actual\n\n    -[\n    -  \"Erro ao carregar resumo: TypeError: Cannot read properties of undefined (reading 'entrada')\\n    at carregarResumoFinanceiro (http://127.0.0.1:3137/scripts/home.js:113:22)\"\n    -]\n    +[]\n\n    at World.<anonymous> (C:\\Users\\shiny\\Dados-PI-Transforme-se\\tests\\e2e\\steps\\ciclo4.steps.cjs:108:12)"
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 49,
+            "name": "a página inicial não deve registrar erro ao carregar o resumo",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:106"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13192299
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@reprovado",
+            "line": 44
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;registrar-e-listar-movimentação-financeira",
+        "keyword": "Cenário",
+        "line": 52,
+        "name": "Registrar e listar movimentação financeira",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 203569199
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 12461800
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 53,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 6344100
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 54,
+            "name": "registro uma entrada financeira válida",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:111"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 72599
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 55,
+            "name": "a consulta do ciclo quatro deve responder com status 201",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5512899
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 56,
+            "name": "a movimentação deve aparecer na lista do usuário",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:118"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13748399
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 51
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;registrar-movimentação-pela-tela-financeira",
+        "keyword": "Cenário",
+        "line": 59,
+        "name": "Registrar movimentação pela tela financeira",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 225263299
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 10257899
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 60,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 330700499
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 61,
+            "name": "adiciono uma entrada pela página financeira",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:123"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 38714899
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 62,
+            "name": "devo ver a confirmação e a movimentação na tela",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:132"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 16252500
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 58
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;rejeitar-movimentação-financeira-com-dia-inexistente",
+        "keyword": "Cenário",
+        "line": 65,
+        "name": "Rejeitar movimentação financeira com dia inexistente",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 225395800
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 8300900
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 66,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5897300
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 67,
+            "name": "registro uma movimentação financeira na data \"2026-02-30\"",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:140"
+            }
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 352700,
+              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n201 !== 400\n\n    + expected - actual\n\n    -201\n    +400\n\n    at World.<anonymous> (C:\\Users\\shiny\\Dados-PI-Transforme-se\\tests\\e2e\\steps\\ciclo4.steps.cjs:26:12)"
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 68,
+            "name": "a consulta do ciclo quatro deve responder com status 400",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 15965699
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@reprovado",
+            "line": 64
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;pesquisar-conteúdo-na-central-de-ajuda",
+        "keyword": "Cenário",
+        "line": 71,
+        "name": "Pesquisar conteúdo na Central de Ajuda",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 236828000
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 10818699
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 72,
+            "name": "pesquiso \"financeiro\" na Central de Ajuda pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:146"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 86199
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 73,
+            "name": "a consulta do ciclo quatro deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 668400
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 74,
+            "name": "devo receber perguntas relacionadas ao termo pesquisado",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:155"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 15559000
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 70
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;rejeitar-busca-contendo-somente-espaços",
+        "keyword": "Cenário",
+        "line": 77,
+        "name": "Rejeitar busca contendo somente espaços",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 229389900
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 10288800
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 78,
+            "name": "pesquiso somente espaços na Central de Ajuda pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:151"
+            }
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 316700,
+              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n200 !== 400\n\n    + expected - actual\n\n    -200\n    +400\n\n    at World.<anonymous> (C:\\Users\\shiny\\Dados-PI-Transforme-se\\tests\\e2e\\steps\\ciclo4.steps.cjs:26:12)"
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 79,
+            "name": "a consulta do ciclo quatro deve responder com status 400",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 14158000
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@reprovado",
+            "line": 76
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;abrir-e-consultar-ticket-de-suporte",
+        "keyword": "Cenário",
+        "line": 82,
+        "name": "Abrir e consultar ticket de suporte",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 195469100
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 8975300
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 83,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4919899
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 84,
+            "name": "abro um ticket válido pela API",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:161"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 66399
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 85,
+            "name": "a consulta do ciclo quatro deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11621100
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 86,
+            "name": "o ticket deve aparecer somente para o usuário autenticado",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:168"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 12863699
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 81
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;salvar-os-dados-do-negócio-no-meu-mei",
+        "keyword": "Cenário",
+        "line": 89,
+        "name": "Salvar os dados do negócio no Meu MEI",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 190554500
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4822699
+            },
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 90,
+            "name": "que estou autenticado para o ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4567600
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 91,
+            "name": "salvo informações válidas do meu negócio",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:177"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 111899
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 92,
+            "name": "a consulta do ciclo quatro deve responder com status 200",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 6016099
+            },
+            "arguments": [],
+            "keyword": "E ",
+            "line": 93,
+            "name": "as informações do negócio devem ser persistidas",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:182"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13147299
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 88
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;visualizar-obrigações-na-interface",
+        "keyword": "Cenário",
+        "line": 96,
+        "name": "Visualizar obrigações na interface",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 188887200
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 51565200
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 97,
+            "name": "abro a página de obrigações no ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:189"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 30779700
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 98,
+            "name": "devo visualizar as obrigações cadastradas",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:193"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13079999
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 95
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "regressões-e-novas-integrações-do-ciclo-4;visualizar-a-central-de-ajuda-na-interface",
+        "keyword": "Cenário",
+        "line": 101,
+        "name": "Visualizar a Central de Ajuda na interface",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 215962300
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 76481200
+            },
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 102,
+            "name": "abro a Central de Ajuda no ciclo quatro",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:199"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 65019499
+            },
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 103,
+            "name": "devo visualizar categorias e perguntas frequentes",
+            "match": {
+              "location": "tests\\e2e\\steps\\ciclo4.steps.cjs:203"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 16875000
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ciclo4",
+            "line": 2
+          },
+          {
+            "name": "@aprovado",
+            "line": 100
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "regressões-e-novas-integrações-do-ciclo-4",
+    "line": 3,
+    "keyword": "Funcionalidade",
+    "name": "Regressões e novas integrações do ciclo 4",
+    "tags": [
+      {
+        "name": "@ciclo4",
+        "line": 2
+      }
+    ],
+    "uri": "tests\\e2e\\features\\ciclo4.feature"
+  }
+]
