@@ -13,6 +13,12 @@ const { setDefaultCACertificates } = require("tls");
 // Exportando o banco de dados Json
 const db = JSON.parse(fs.readFileSync(path.join(__dirname, "db.json")));
 
+function salvarBanco() {
+    fs.writeFileSync(
+        path.join(__dirname, "db.json"),
+        JSON.stringify(db, null, 4)
+    );
+}
 
 // Da acesso a pasta public ao express para receber recursos de estilizacao e script como css e js
 app.use(express.static(
@@ -39,7 +45,7 @@ app.use(session({
 
 
 // Coloca o arquivo index como rota principal do sistema
-app.get("/", function(request, response){
+app.get("/home", function(request, response){
     response.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
@@ -89,6 +95,14 @@ app.get("/visaoGeral", function(request, response){
 
 app.get("/api/cursos", function(request, response){
     response.json(db.cursos);
+});
+
+app.get("/assinaturas", function(request, response){
+    response.sendFile(path.join(__dirname, "public", "Assinaturas", "assinaturas.html"));
+});
+
+app.get("/suporte", function(request, response){
+    response.sendFile(path.join(__dirname, "public", "paginaSuporte", "suporte.html"));
 });
 
 //Rota de api para o front consumir e conseguir ver se o user está logado
@@ -155,6 +169,328 @@ app.get("/api/mentorias", function(request, response){
     });
 
     response.json(mentoriasComProfessor);
+});
+
+app.get("/api/negocio", function(request, response){
+    if(!request.session.usuario){
+        response.status(401).json({ erro: "Não autenticado" });
+        return;
+    }
+
+    const idUsuarioLogado = request.session.usuario.id_usuario;
+    const negocio = db.negocios[idUsuarioLogado];
+
+    response.json({
+        nome_usuario: request.session.usuario.nome, // vem da sessão, não é editável aqui
+        cnpj: negocio ? negocio.cnpj : "",
+        nome_negocio: negocio ? negocio.nome_negocio : "",
+        situacao: negocio ? negocio.situacao : ""
+    });
+});
+
+app.get("/api/obrigacoes", function(request, response){
+    response.json(db.obrigacoes);
+});
+
+
+app.get("/api/guias", function(request, response){
+    response.json(db.guias);
+});
+
+// Rotas Financeiro
+
+// Retorna o resumo financeiro do usuário logado.
+// Pode receber mês e ano:
+// GET /api/financeiro/resumo?mes=8&ano=2026
+app.get("/api/financeiro/resumo", function(request, response) {
+
+    if (!request.session.usuario) {
+        response.status(401).json({
+            erro: "Não autenticado"
+        });
+        return;
+    }
+
+    const idUsuario = request.session.usuario.id_usuario;
+
+    const hoje = new Date();
+
+    const mes = request.query.mes
+        ? Number(request.query.mes)
+        : hoje.getMonth() + 1;
+
+    const ano = request.query.ano
+        ? Number(request.query.ano)
+        : hoje.getFullYear();
+
+
+    if (mes < 1 || mes > 12 || !Number.isInteger(mes)) {
+        response.status(400).json({
+            erro: "Mês inválido"
+        });
+        return;
+    }
+
+    if (!Number.isInteger(ano)) {
+        response.status(400).json({
+            erro: "Ano inválido"
+        });
+        return;
+    }
+
+
+    const movimentacoes = Object.values(db.movimentacoes || {});
+
+    // Movimentações apenas do usuário logado
+    const movimentacoesUsuario = movimentacoes.filter(function(movimentacao) {
+        return movimentacao.id_usuario === idUsuario;
+    });
+
+
+    // Filtra mês solicitado
+    const movimentacoesMes = movimentacoesUsuario.filter(function(movimentacao) {
+
+        const [anoMovimento, mesMovimento] = movimentacao.data
+            .split("-")
+            .map(Number);
+
+        return anoMovimento === ano && mesMovimento === mes;
+    });
+
+
+    let entradas = 0;
+    let saidas = 0;
+
+    movimentacoesMes.forEach(function(movimentacao) {
+
+        if (movimentacao.tipo === "entrada") {
+            entradas += Number(movimentacao.valor);
+        }
+
+        if (movimentacao.tipo === "saida") {
+            saidas += Number(movimentacao.valor);
+        }
+
+    });
+
+
+    const lucro = entradas - saidas;
+
+    const totalMovimentado = entradas + saidas;
+
+    let percentualEntradas = 0;
+    let percentualSaidas = 0;
+
+    if (totalMovimentado > 0) {
+        percentualEntradas = (entradas / totalMovimentado) * 100;
+        percentualSaidas = (saidas / totalMovimentado) * 100;
+    }
+
+
+    response.json({
+        mes: mes,
+        ano: ano,
+
+        entrada: entradas,
+        saida: saidas,
+        lucro: lucro,
+
+        total_movimentado: totalMovimentado,
+
+        percentual_entradas: Number(percentualEntradas.toFixed(2)),
+        percentual_saidas: Number(percentualSaidas.toFixed(2))
+    });
+
+});
+
+app.delete("/api/financeiro/movimentacoes/:id", function(request, response) {
+
+    if (!request.session.usuario) {
+        response.status(401).json({
+            erro: "Não autenticado"
+        });
+        return;
+    }
+
+    const id = request.params.id;
+    const movimentacao = db.movimentacoes?.[id];
+
+
+    if (!movimentacao) {
+        response.status(404).json({
+            erro: "Movimentação não encontrada"
+        });
+        return;
+    }
+
+
+    if (movimentacao.id_usuario !== request.session.usuario.id_usuario) {
+        response.status(403).json({
+            erro: "Essa movimentação não pertence a você"
+        });
+        return;
+    }
+
+    delete db.movimentacoes[id];
+    salvarBanco();
+
+    response.json({
+        sucesso: true
+    });
+
+});
+
+app.get("/api/financeiro/movimentacoes", function(request, response) {
+
+    if (!request.session.usuario) {
+        response.status(401).json({
+            erro: "Não autenticado"
+        });
+        return;
+    }
+
+    const idUsuario = request.session.usuario.id_usuario;
+
+    const { mes, ano, tipo } = request.query;
+
+    let movimentacoes = Object.values(db.movimentacoes || {});
+
+    // Somente movimentações do usuário logado
+    movimentacoes = movimentacoes.filter(function(movimentacao) {
+        return movimentacao.id_usuario === idUsuario;
+    });
+
+
+    // Filtra por tipo, caso seja informado
+    if (tipo) {
+
+        if (tipo !== "entrada" && tipo !== "saida") {
+            response.status(400).json({
+                erro: "Tipo inválido. Use 'entrada' ou 'saida'"
+            });
+            return;
+        }
+
+        movimentacoes = movimentacoes.filter(function(movimentacao) {
+            return movimentacao.tipo === tipo;
+        });
+    }
+
+
+    // Filtra mês e ano
+    if (mes && ano) {
+
+        movimentacoes = movimentacoes.filter(function(movimentacao) {
+
+            const [anoMovimento, mesMovimento] = movimentacao.data
+                .split("-")
+                .map(Number);
+
+            return (
+                anoMovimento === Number(ano) &&
+                mesMovimento === Number(mes)
+            );
+        });
+
+    }
+
+
+    // Mais recentes primeiro
+    movimentacoes.sort(function(a, b) {
+        return new Date(b.data) - new Date(a.data);
+    });
+
+
+    response.json(movimentacoes);
+});
+
+app.post("/api/financeiro/movimentacoes", function(request, response) {
+
+    if (!request.session.usuario) {
+        response.status(401).json({
+            erro: "Não autenticado"
+        });
+        return;
+    }
+
+
+    const { descricao, valor, tipo, data } = request.body;
+
+
+    if (!descricao || !descricao.trim()) {
+        response.status(400).json({
+            erro: "A descrição é obrigatória"
+        });
+        return;
+    }
+
+
+    const valorNumero = Number(valor);
+
+    if (!valorNumero || valorNumero <= 0) {
+        response.status(400).json({
+            erro: "Informe um valor maior que zero"
+        });
+        return;
+    }
+
+
+    if (tipo !== "entrada" && tipo !== "saida") {
+        response.status(400).json({
+            erro: "O tipo deve ser 'entrada' ou 'saida'"
+        });
+        return;
+    }
+
+
+    if (!data || !/^\d{4}-\d{2}-\d{2}$/.test(data)) {
+        response.status(400).json({
+            erro: "Informe uma data no formato AAAA-MM-DD"
+        });
+        return;
+    }
+
+
+    if (!db.movimentacoes) {
+        db.movimentacoes = {};
+    }
+
+
+    const movimentacoes = Object.values(db.movimentacoes);
+
+    let maiorId = 0;
+
+    movimentacoes.forEach(function(movimentacao) {
+        if (movimentacao.id > maiorId) {
+            maiorId = movimentacao.id;
+        }
+    });
+
+
+    const novoId = maiorId + 1;
+
+
+    const novaMovimentacao = {
+        id: novoId,
+        id_usuario: request.session.usuario.id_usuario,
+        descricao: descricao.trim(),
+        valor: valorNumero,
+        tipo: tipo,
+        data: data
+    };
+
+
+    db.movimentacoes[novoId] = novaMovimentacao;
+
+
+    salvarBanco();
+
+
+    response.status(201).json({
+        sucesso: true,
+        movimentacao: novaMovimentacao
+    });
+
 });
 
 // ================== Rotas para POST =======================
@@ -445,7 +781,68 @@ app.put("/api/perfil", function(request, response){
 
     response.json({sucesso: true});
 })
-// ================== Rotas de Calendário (eventos por dia) =======================
+
+app.put("/api/negocio", function(request, response){
+    if(!request.session.usuario){
+        response.status(401).json({ erro: "Não autenticado" });
+        return;
+    }
+ 
+    const { cnpj, nome_negocio, situacao } = request.body;
+ 
+    if(!cnpj || !nome_negocio || !situacao){
+        response.status(400).json({ erro: "Preencha CNPJ, nome do negócio e situação" });
+        return;
+    }
+ 
+    const idUsuarioLogado = request.session.usuario.id_usuario;
+ 
+    db.negocios[idUsuarioLogado] = {
+        cnpj: cnpj,
+        nome_negocio: nome_negocio,
+        situacao: situacao
+    };
+ 
+    fs.writeFileSync(
+        path.join(__dirname, "db.json"),
+        JSON.stringify(db, null, 4)
+    );
+ 
+    response.json({ sucesso: true });
+});
+
+app.put("/api/obrigacoes/:id", function(request, response){
+    if(!request.session.usuario){
+        response.status(401).json({ erro: "Não autenticado" });
+        return;
+    }
+ 
+    const idObrigacao = request.params.id;
+    const obrigacao = db.obrigacoes[idObrigacao];
+ 
+    if(!obrigacao){
+        response.status(404).json({ erro: "Obrigação não encontrada" });
+        return;
+    }
+ 
+    const { status } = request.body;
+    const statusValidos = ["Em dia", "Pendente", "Concluida"];
+ 
+    if(!statusValidos.includes(status)){
+        response.status(400).json({ erro: "Status inválido" });
+        return;
+    }
+ 
+    obrigacao.status = status;
+ 
+    fs.writeFileSync(
+        path.join(__dirname, "db.json"),
+        JSON.stringify(db, null, 4)
+    );
+ 
+    response.json({ sucesso: true, obrigacao: obrigacao });
+});
+// Rotas de Calendário (eventos por dia)
 
 // Lista os eventos do usuário logado. Aceita filtro opcional por mês/ano:
 // GET /api/eventos?mes=9&ano=2026
@@ -610,9 +1007,70 @@ app.delete("/eventos/:id", function(request, response){
     response.json({ sucesso: true });
 });
 
-// ================== Rotas de Planos/Assinaturas =======================
+// Rotas da Central de Ajuda
+
+const { listarCategorias, listarPerguntas, buscarPerguntas, criarTicket, listarTicketsDoUsuario } = require("./public/scripts/ajuda");
+ 
+app.get("/api/ajuda/categorias", function(request, response){
+    response.json(listarCategorias(db));
+});
+ 
+app.get("/api/ajuda/perguntas", function(request, response){
+    const { categoria } = request.query;
+    response.json(listarPerguntas(db, categoria));
+});
+ 
+app.get("/api/ajuda/busca", function(request, response){
+    const { q } = request.query;
+ 
+    if(!q){
+        response.status(400).json({ erro: "Informe o termo de busca no parâmetro q" });
+        return;
+    }
+ 
+    response.json(buscarPerguntas(db, q));
+});
+ 
+app.post("/api/ajuda/tickets", function(request, response){
+    if(!request.session.usuario){
+        response.status(401).json({ erro: "Não autenticado" });
+        return;
+    }
+ 
+    const { assunto, mensagem } = request.body;
+ 
+    if(!assunto || !assunto.trim()){
+        response.status(400).json({ erro: "O assunto do ticket é obrigatório" });
+        return;
+    }
+ 
+    if(!mensagem || !mensagem.trim()){
+        response.status(400).json({ erro: "A mensagem do ticket é obrigatória" });
+        return;
+    }
+ 
+    const novoTicket = criarTicket(db, request.session.usuario.id_usuario, assunto, mensagem);
+ 
+    fs.writeFileSync(path.join(__dirname, "db.json"), JSON.stringify(db, null, 4));
+ 
+    response.json({ sucesso: true, ticket: novoTicket });
+});
+ 
+app.get("/api/ajuda/tickets", function(request, response){
+    if(!request.session.usuario){
+        response.status(401).json({ erro: "Não autenticado" });
+        return;
+    }
+ 
+    response.json(listarTicketsDoUsuario(db, request.session.usuario.id_usuario));
+});
+
+// Rotas de Planos/Assinaturas
 
 // Lista todos os planos disponíveis (pública, pra tela de Assinaturas)
+
+const { pegarPlanoDoUsuario, usuarioTemAcesso, exigirFeature } = require("./public/scripts/planos");
+
 app.get("/api/planos", function(request, response){
     response.json(db.planos);
 });
@@ -655,13 +1113,9 @@ app.post("/api/planos/assinar", function(request, response){
         plano: db.planos[id_plano]
     });
 });
-
-app.get("/assinaturas", function(request, response){
-    response.sendFile(path.join(__dirname, "public", "pages", "assinaturas.html"));
-});
 // Sobe o servidor na porta 3000
 // para acessar execute "node server.js" no terminal
 // use CTRL + Click no link gerado ou abra o localhost:3000 no seu navegador
 app.listen(3000, function(){
-    console.log("Servidor rodando no endereco: http://localhost:3000");
+    console.log("Servidor rodando no endereco: http://localhost:3000/login");
 });
